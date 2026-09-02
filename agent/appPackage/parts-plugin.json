@@ -1,0 +1,536 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+    "schema_version": "v2.4",
+    "name_for_human": "Parts Inventory",
+    "description_for_human": "Spare-parts stock levels and availability for well maintenance, across regional warehouses.",
+    "namespace": "inventory",
+    "functions": [
+        {
+            "name": "get_inventory_summary",
+            "description": "Get an overview of the spare-parts inventory: stock lines, distinct parts, in-stock vs out-of-stock, total units, and breakdown by category.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {},
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "\ud83d\udce6 ${distinct_parts} parts · ${stock_lines} stock lines",
+                                "weight": "Bolder",
+                                "size": "Medium",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${in_stock_lines} in stock · ${out_of_stock_lines} out of stock · ${total_units} units",
+                                "isSubtle": true,
+                                "spacing": "None",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "list_parts",
+            "description": "List spare-parts stock lines, optionally filtered by category, stock status, a search term, the failure/issue code addressed, or a warehouse region.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$.parts",
+                    "properties": {
+                        "title": "$.name",
+                        "subtitle": "$.warehouse"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "${name} · ${part_id}",
+                                "weight": "Bolder",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${quantity} in stock @ ${warehouse} (${region}) · lead ${lead_time_days} d",
+                                "isSubtle": true,
+                                "spacing": "None",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "check_part_availability",
+            "description": "Check the availability of a specific part by id or name across all warehouses: total units, per-warehouse breakdown, and reorder lead time if out of stock.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.name"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "${name} · ${part_id}",
+                                "weight": "Bolder",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${if(in_stock, '\u2705 ' + string(total_units_available) + ' in stock', '\u274c out of stock · lead ' + string(reorder_lead_time_days) + ' d')}",
+                                "isSubtle": true,
+                                "spacing": "None",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "find_parts_for_issue",
+            "description": "Given a well problem in plain language (e.g. 'annulus overpressure', 'ESP failure'), return the spare parts required to fix it and whether each is in stock, plus whether all parts are available and in how many days.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {},
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "\ud83d\udd27 Parts for ${issue_label}",
+                                "weight": "Bolder",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${if(all_in_stock, 'All ' + string(part_count) + ' part(s) in stock', string(part_count) + ' part(s), ready in ' + string(parts_ready_in_days) + ' d')}",
+                                "isSubtle": true,
+                                "spacing": "None",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "create_purchase_order",
+            "description": "Fill a purchase-order form (DRAFT) to reorder a spare part. Returns a fully formatted PO for review; it does not send anything.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {},
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "\ud83d\udcc4 Purchase order ${po_number} (${status})",
+                                "weight": "Bolder",
+                                "size": "Medium",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${line_items[0].description} ×${line_items[0].quantity} · subtotal $${subtotal_usd}",
+                                "wrap": true,
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Supplier: ${supplier.company} · will email ${email.to} (cc ${email.cc})",
+                                "isSubtle": true,
+                                "wrap": true,
+                                "spacing": "None"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "send_purchase_order",
+            "description": "Send a spare-part purchase order by email to the supplier (cc requester) and record it in the purchase-order history.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {},
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "\u2709\ufe0f Purchase order ${po_number} sent",
+                                "weight": "Bolder",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "To ${supplier} <${to}> · cc ${cc}",
+                                "isSubtle": true,
+                                "wrap": true,
+                                "spacing": "None"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "list_purchase_orders",
+            "description": "Search the history of placed purchase orders to confirm whether a part was ordered or review recent orders.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$.orders",
+                    "properties": {
+                        "title": "$.part_name",
+                        "subtitle": "$.po_number"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "${po_number} · ${part_name} ×${quantity}",
+                                "weight": "Bolder",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${status} · ${supplier} · ${sent_at}${if(well_ref, ' · ' + well_ref, '')}",
+                                "isSubtle": true,
+                                "spacing": "None",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "get_purchase_order",
+            "description": "Get the full detail of a single purchase order from the history by its PO number.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.po_number"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "\ud83d\udcc4 ${po_number} (${status})",
+                                "weight": "Bolder",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${part_name} ×${quantity} · ${supplier} · ${sent_at}",
+                                "isSubtle": true,
+                                "spacing": "None",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "RemoteMCPServer",
+            "auth": {
+                "type": "None"
+            },
+            "spec": {
+                "url": "https://0g5b8whl-8011.uks1.devtunnels.ms/mcp/",
+                "mcp_tool_description": {
+                    "tools": [
+                        {
+                            "name": "get_inventory_summary",
+                            "description": "Get an overview of the spare-parts inventory: number of stock lines, distinct parts, how many lines are in stock vs out of stock, total units, breakdown by category, and number of warehouses.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {},
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        },
+                        {
+                            "name": "list_parts",
+                            "description": "List spare-parts stock lines, optionally filtered by category, stock status, a search term (part name or id), the failure/issue code a part addresses, or a warehouse region. Each line shows quantity, warehouse, region and reorder lead time.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "category": {
+                                        "type": "string",
+                                        "description": "Filter by category, e.g. 'Wellhead', 'Downhole', 'Artificial lift', 'Chemicals', 'Instrumentation'."
+                                    },
+                                    "in_stock": {
+                                        "type": "boolean",
+                                        "description": "true = only in-stock lines, false = only out-of-stock."
+                                    },
+                                    "search": {
+                                        "type": "string",
+                                        "description": "Match part name or id (e.g. 'packer', 'P-1005')."
+                                    },
+                                    "issue_code": {
+                                        "type": "string",
+                                        "description": "Filter to parts that address a failure code: 'OVERPRESSURE', 'PRESSURE_DECLINE', 'CORROSION', 'ESP_FAILURE_RISK', 'GAS_LOCK', 'SAND_PRODUCTION', 'SCALE_BUILDUP', 'HIGH_WATER_CUT', 'H2S_DETECTED'."
+                                    },
+                                    "region": {
+                                        "type": "string",
+                                        "description": "Filter by warehouse region/country, e.g. 'North Sea'."
+                                    },
+                                    "limit": {
+                                        "type": "integer",
+                                        "minimum": 1,
+                                        "maximum": 200,
+                                        "description": "Max lines to return (default 25)."
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        },
+                        {
+                            "name": "check_part_availability",
+                            "description": "Check the availability of a specific part by its id (e.g. 'P-1005') or name (e.g. 'annulus safety valve') across all warehouses: total units available, per-warehouse breakdown, and reorder lead time if out of stock.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "part": {
+                                        "type": "string",
+                                        "description": "Part id or name to look up."
+                                    }
+                                },
+                                "required": ["part"],
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        },
+                        {
+                            "name": "find_parts_for_issue",
+                            "description": "Given a well problem described in plain language (e.g. 'annulus overpressure', 'ESP failure', 'H2S', 'surpression de l'anneau'), return the spare parts required to fix it and whether each is in stock, with a summary of whether all parts are available and, if not, in how many days they can be on hand. Optionally restrict to a warehouse region to prefer local stock.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "issue": {
+                                        "type": "string",
+                                        "description": "The problem to fix, e.g. 'annulus overpressure'."
+                                    },
+                                    "region": {
+                                        "type": "string",
+                                        "description": "Optional warehouse region to prefer, e.g. 'North Sea'."
+                                    }
+                                },
+                                "required": ["issue"],
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        },
+                        {
+                            "name": "create_purchase_order",
+                            "description": "Fill a purchase-order form (a DRAFT) to reorder a spare part, typically one that is out of stock. Provide the part (id or name) and quantity; the tool resolves the part's unit cost and supplier lead time, picks the nominated supplier for the region, and returns a fully formatted purchase order (PO number, buyer, supplier, line item, subtotal) ready for review. This does NOT send anything — present the draft to the user, then use send_purchase_order once they confirm.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "part": {
+                                        "type": "string",
+                                        "description": "Part id or name to order, e.g. 'P-1002' or 'casing head pack-off'."
+                                    },
+                                    "quantity": {
+                                        "type": "integer",
+                                        "minimum": 1,
+                                        "maximum": 500,
+                                        "description": "Quantity to order (default 1)."
+                                    },
+                                    "region": {
+                                        "type": "string",
+                                        "description": "Region/basin whose supplier to order from, e.g. 'Gulf of Mexico'."
+                                    },
+                                    "well_id": {
+                                        "type": "string",
+                                        "description": "Optional well reference the order relates to, e.g. 'GOM-011'."
+                                    },
+                                    "needed_by": {
+                                        "type": "string",
+                                        "description": "Optional required delivery date (YYYY-MM-DD)."
+                                    },
+                                    "reason": {
+                                        "type": "string",
+                                        "description": "Optional reason/justification for the order."
+                                    },
+                                    "requested_by": {
+                                        "type": "string",
+                                        "description": "Name of the person raising the order."
+                                    },
+                                    "requester_email": {
+                                        "type": "string",
+                                        "description": "Requester email (used as CC / buyer contact)."
+                                    }
+                                },
+                                "required": ["part"],
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        },
+                        {
+                            "name": "send_purchase_order",
+                            "description": "Send a spare-part purchase order by email to the supplier, with the requester in CC. Takes the same inputs as create_purchase_order and rebuilds the identical PO (same PO number), then sends it and records it in the purchase-order history. Only call this after the user has confirmed the draft.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "part": {
+                                        "type": "string",
+                                        "description": "Part id or name to order."
+                                    },
+                                    "quantity": {
+                                        "type": "integer",
+                                        "minimum": 1,
+                                        "maximum": 500,
+                                        "description": "Quantity to order (default 1)."
+                                    },
+                                    "region": {
+                                        "type": "string",
+                                        "description": "Region/basin whose supplier to order from."
+                                    },
+                                    "well_id": {
+                                        "type": "string",
+                                        "description": "Optional well reference the order relates to."
+                                    },
+                                    "needed_by": {
+                                        "type": "string",
+                                        "description": "Optional required delivery date (YYYY-MM-DD)."
+                                    },
+                                    "reason": {
+                                        "type": "string",
+                                        "description": "Optional reason/justification for the order."
+                                    },
+                                    "requested_by": {
+                                        "type": "string",
+                                        "description": "Name of the person raising the order."
+                                    },
+                                    "requester_email": {
+                                        "type": "string",
+                                        "description": "Requester email (used as CC / buyer contact)."
+                                    }
+                                },
+                                "required": ["part"],
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": false
+                            }
+                        },
+                        {
+                            "name": "list_purchase_orders",
+                            "description": "Search the history of purchase orders that have been placed, to confirm whether a part was ordered or review recent orders. Filter by part (id or name), well reference, PO number, supplier, or status. Returns matching orders (PO number, part, quantity, supplier, date, well reference) newest first.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "part": {
+                                        "type": "string",
+                                        "description": "Part id or name to look for, e.g. 'P-1002' or 'pack-off'."
+                                    },
+                                    "well_id": {
+                                        "type": "string",
+                                        "description": "Well reference the order was raised for, e.g. 'GOM-011'."
+                                    },
+                                    "po_number": {
+                                        "type": "string",
+                                        "description": "A specific PO number, e.g. 'PO-20260902-A2F83'."
+                                    },
+                                    "supplier": {
+                                        "type": "string",
+                                        "description": "Supplier company name (partial match)."
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "description": "Filter by status (currently 'SENT')."
+                                    },
+                                    "limit": {
+                                        "type": "integer",
+                                        "minimum": 1,
+                                        "maximum": 200,
+                                        "description": "Max orders to return (default 25)."
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        },
+                        {
+                            "name": "get_purchase_order",
+                            "description": "Get the full detail of a single purchase order from the history by its PO number, including the formatted purchase-order document.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "po_number": {
+                                        "type": "string",
+                                        "description": "The PO number, e.g. 'PO-20260902-A2F83'."
+                                    }
+                                },
+                                "required": ["po_number"],
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        }
+                    ]
+                }
+            },
+            "run_for_functions": [
+                "get_inventory_summary",
+                "list_parts",
+                "check_part_availability",
+                "find_parts_for_issue",
+                "create_purchase_order",
+                "send_purchase_order",
+                "list_purchase_orders",
+                "get_purchase_order"
+            ]
+        }
+    ]
+}

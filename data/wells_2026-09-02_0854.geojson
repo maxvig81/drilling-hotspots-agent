@@ -1,0 +1,2156 @@
+{
+  "type": "FeatureCollection",
+  "generated_at": "2026-09-02T08:54:39+00:00",
+  "count": 60,
+  "note": "Synthetic demo data -- not real well locations or measurements.",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.838,
+          37.327
+        ]
+      },
+      "properties": {
+        "id": "BOH-053",
+        "name": "Bohai Bay BOH-053",
+        "basin": "Bohai Bay",
+        "basin_key": "bohai_bay",
+        "country": "China",
+        "region": "Bohai Sea",
+        "operator": "BoHai Offshore Ltd.",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "gas",
+        "type_label": "Gas producer",
+        "production_bbl_d": 3499,
+        "wellhead_pressure_psi": 4389,
+        "depth_m": 4860,
+        "water_cut_pct": 2.0,
+        "alerts": [
+          {
+            "code": "H2S_DETECTED",
+            "label": "H2S detected",
+            "severity": "critical"
+          }
+        ],
+        "alert_count": 1,
+        "health": "critical",
+        "spud_date": "2023-07-19",
+        "last_update": "2026-09-01T19:34:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.87,
+          39.887
+        ]
+      },
+      "properties": {
+        "id": "BOH-054",
+        "name": "Bohai Bay BOH-054",
+        "basin": "Bohai Bay",
+        "basin_key": "bohai_bay",
+        "country": "China",
+        "region": "Bohai Sea",
+        "operator": "Delta Oil Nigeria",
+        "offshore": true,
+        "status": "shut-in",
+        "status_label": "Shut-in",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 2148,
+        "depth_m": 4696,
+        "water_cut_pct": 14.6,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2018-06-15",
+        "last_update": "2026-09-02T05:26:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          117.976,
+          37.0
+        ]
+      },
+      "properties": {
+        "id": "BOH-055",
+        "name": "Bohai Bay BOH-055",
+        "basin": "Bohai Bay",
+        "basin_key": "bohai_bay",
+        "country": "China",
+        "region": "Bohai Sea",
+        "operator": "Arabian Upstream",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 776,
+        "wellhead_pressure_psi": 2852,
+        "depth_m": 3345,
+        "water_cut_pct": 21.3,
+        "alerts": [
+          {
+            "code": "ESP_FAILURE_RISK",
+            "label": "ESP failure risk",
+            "severity": "critical"
+          }
+        ],
+        "alert_count": 1,
+        "health": "critical",
+        "spud_date": "2023-10-07",
+        "last_update": "2026-09-01T13:33:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.806,
+          39.117
+        ]
+      },
+      "properties": {
+        "id": "BOH-056",
+        "name": "Bohai Bay BOH-056",
+        "basin": "Bohai Bay",
+        "basin_key": "bohai_bay",
+        "country": "China",
+        "region": "Bohai Sea",
+        "operator": "Delta Oil Nigeria",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 1581,
+        "wellhead_pressure_psi": 2598,
+        "depth_m": 5656,
+        "water_cut_pct": 39.3,
+        "alerts": [
+          {
+            "code": "CORROSION",
+            "label": "Corrosion inhibitor low",
+            "severity": "info"
+          }
+        ],
+        "alert_count": 1,
+        "health": "watch",
+        "spud_date": "2018-07-22",
+        "last_update": "2026-09-02T00:42:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.36,
+          39.168
+        ]
+      },
+      "properties": {
+        "id": "BOH-057",
+        "name": "Bohai Bay BOH-057",
+        "basin": "Bohai Bay",
+        "basin_key": "bohai_bay",
+        "country": "China",
+        "region": "Bohai Sea",
+        "operator": "BoHai Offshore Ltd.",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 547,
+        "wellhead_pressure_psi": 2377,
+        "depth_m": 3086,
+        "water_cut_pct": 39.7,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2025-11-21",
+        "last_update": "2026-09-02T06:45:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          119.95,
+          37.972
+        ]
+      },
+      "properties": {
+        "id": "BOH-058",
+        "name": "Bohai Bay BOH-058",
+        "basin": "Bohai Bay",
+        "basin_key": "bohai_bay",
+        "country": "China",
+        "region": "Bohai Sea",
+        "operator": "Arabian Upstream",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 1556,
+        "wellhead_pressure_psi": 2619,
+        "depth_m": 5757,
+        "water_cut_pct": 59.6,
+        "alerts": [
+          {
+            "code": "HIGH_WATER_CUT",
+            "label": "High water cut",
+            "severity": "warning"
+          }
+        ],
+        "alert_count": 1,
+        "health": "warning",
+        "spud_date": "2024-01-09",
+        "last_update": "2026-09-01T10:29:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.306,
+          37.222
+        ]
+      },
+      "properties": {
+        "id": "BOH-059",
+        "name": "Bohai Bay BOH-059",
+        "basin": "Bohai Bay",
+        "basin_key": "bohai_bay",
+        "country": "China",
+        "region": "Bohai Sea",
+        "operator": "Permian Resources Co.",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 1518,
+        "wellhead_pressure_psi": 2762,
+        "depth_m": 5180,
+        "water_cut_pct": 57.6,
+        "alerts": [
+          {
+            "code": "CORROSION",
+            "label": "Corrosion inhibitor low",
+            "severity": "info"
+          }
+        ],
+        "alert_count": 1,
+        "health": "watch",
+        "spud_date": "2024-06-03",
+        "last_update": "2026-09-01T20:06:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          118.267,
+          38.265
+        ]
+      },
+      "properties": {
+        "id": "BOH-060",
+        "name": "Bohai Bay BOH-060",
+        "basin": "Bohai Bay",
+        "basin_key": "bohai_bay",
+        "country": "China",
+        "region": "Bohai Sea",
+        "operator": "GulfStar Energy",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 1679,
+        "wellhead_pressure_psi": 2589,
+        "depth_m": 3115,
+        "water_cut_pct": 38.1,
+        "alerts": [
+          {
+            "code": "PRESSURE_DECLINE",
+            "label": "Wellhead pressure decline",
+            "severity": "warning"
+          }
+        ],
+        "alert_count": 1,
+        "health": "warning",
+        "spud_date": "2015-10-10",
+        "last_update": "2026-09-02T01:10:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -38.82,
+          -21.559
+        ]
+      },
+      "properties": {
+        "id": "CMP-030",
+        "name": "Campos Basin CMP-030",
+        "basin": "Campos Basin",
+        "basin_key": "campos",
+        "country": "Brazil",
+        "region": "Offshore Rio de Janeiro",
+        "operator": "BoHai Offshore Ltd.",
+        "offshore": true,
+        "status": "drilling",
+        "status_label": "Drilling",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1928,
+        "depth_m": 6045,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "H2S_DETECTED",
+            "label": "H2S detected",
+            "severity": "critical"
+          }
+        ],
+        "alert_count": 1,
+        "health": "critical",
+        "spud_date": "2018-06-19",
+        "last_update": "2026-09-01T11:08:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -40.483,
+          -23.244
+        ]
+      },
+      "properties": {
+        "id": "CMP-031",
+        "name": "Campos Basin CMP-031",
+        "basin": "Campos Basin",
+        "basin_key": "campos",
+        "country": "Brazil",
+        "region": "Offshore Rio de Janeiro",
+        "operator": "NordPetro AS",
+        "offshore": true,
+        "status": "shut-in",
+        "status_label": "Shut-in",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1742,
+        "depth_m": 5447,
+        "water_cut_pct": 5.2,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2018-02-02",
+        "last_update": "2026-09-01T21:21:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -39.562,
+          -23.125
+        ]
+      },
+      "properties": {
+        "id": "CMP-032",
+        "name": "Campos Basin CMP-032",
+        "basin": "Campos Basin",
+        "basin_key": "campos",
+        "country": "Brazil",
+        "region": "Offshore Rio de Janeiro",
+        "operator": "BoHai Offshore Ltd.",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 1390,
+        "wellhead_pressure_psi": 2676,
+        "depth_m": 3578,
+        "water_cut_pct": 38.7,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2021-03-14",
+        "last_update": "2026-09-01T09:15:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -40.907,
+          -23.154
+        ]
+      },
+      "properties": {
+        "id": "CMP-033",
+        "name": "Campos Basin CMP-033",
+        "basin": "Campos Basin",
+        "basin_key": "campos",
+        "country": "Brazil",
+        "region": "Offshore Rio de Janeiro",
+        "operator": "Atl\u00e2ntico E&P",
+        "offshore": true,
+        "status": "drilling",
+        "status_label": "Drilling",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1345,
+        "depth_m": 3453,
+        "water_cut_pct": null,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2016-05-30",
+        "last_update": "2026-09-01T23:35:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -40.204,
+          -21.985
+        ]
+      },
+      "properties": {
+        "id": "CMP-034",
+        "name": "Campos Basin CMP-034",
+        "basin": "Campos Basin",
+        "basin_key": "campos",
+        "country": "Brazil",
+        "region": "Offshore Rio de Janeiro",
+        "operator": "NordPetro AS",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 3272,
+        "wellhead_pressure_psi": 2429,
+        "depth_m": 4521,
+        "water_cut_pct": 43.3,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2023-10-02",
+        "last_update": "2026-09-01T23:28:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -39.075,
+          -21.375
+        ]
+      },
+      "properties": {
+        "id": "CMP-035",
+        "name": "Campos Basin CMP-035",
+        "basin": "Campos Basin",
+        "basin_key": "campos",
+        "country": "Brazil",
+        "region": "Offshore Rio de Janeiro",
+        "operator": "GulfStar Energy",
+        "offshore": true,
+        "status": "shut-in",
+        "status_label": "Shut-in",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 2104,
+        "depth_m": 5652,
+        "water_cut_pct": 33.5,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2015-11-16",
+        "last_update": "2026-09-02T04:56:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -40.518,
+          -22.212
+        ]
+      },
+      "properties": {
+        "id": "CMP-036",
+        "name": "Campos Basin CMP-036",
+        "basin": "Campos Basin",
+        "basin_key": "campos",
+        "country": "Brazil",
+        "region": "Offshore Rio de Janeiro",
+        "operator": "NordPetro AS",
+        "offshore": true,
+        "status": "shut-in",
+        "status_label": "Shut-in",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1238,
+        "depth_m": 3207,
+        "water_cut_pct": 49.0,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2016-12-21",
+        "last_update": "2026-09-01T22:24:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -40.219,
+          -23.437
+        ]
+      },
+      "properties": {
+        "id": "CMP-037",
+        "name": "Campos Basin CMP-037",
+        "basin": "Campos Basin",
+        "basin_key": "campos",
+        "country": "Brazil",
+        "region": "Offshore Rio de Janeiro",
+        "operator": "Atl\u00e2ntico E&P",
+        "offshore": true,
+        "status": "maintenance",
+        "status_label": "Maintenance",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 2689,
+        "depth_m": 3417,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "OVERPRESSURE",
+            "label": "Annulus overpressure",
+            "severity": "critical"
+          }
+        ],
+        "alert_count": 1,
+        "health": "critical",
+        "spud_date": "2021-05-25",
+        "last_update": "2026-09-01T22:59:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.464,
+          26.568
+        ]
+      },
+      "properties": {
+        "id": "GHW-023",
+        "name": "Ghawar GHW-023",
+        "basin": "Ghawar / Persian Gulf",
+        "basin_key": "ghawar",
+        "country": "Saudi Arabia",
+        "region": "Eastern Province",
+        "operator": "Permian Resources Co.",
+        "offshore": false,
+        "status": "shut-in",
+        "status_label": "Shut-in",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1281,
+        "depth_m": 3158,
+        "water_cut_pct": 19.1,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2023-11-13",
+        "last_update": "2026-09-01T17:15:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.114,
+          23.737
+        ]
+      },
+      "properties": {
+        "id": "GHW-024",
+        "name": "Ghawar GHW-024",
+        "basin": "Ghawar / Persian Gulf",
+        "basin_key": "ghawar",
+        "country": "Saudi Arabia",
+        "region": "Eastern Province",
+        "operator": "BoHai Offshore Ltd.",
+        "offshore": false,
+        "status": "maintenance",
+        "status_label": "Maintenance",
+        "type": "exploration",
+        "type_label": "Exploration",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 3112,
+        "depth_m": 4830,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "SAND_PRODUCTION",
+            "label": "Sand production",
+            "severity": "warning"
+          }
+        ],
+        "alert_count": 1,
+        "health": "warning",
+        "spud_date": "2020-05-15",
+        "last_update": "2026-09-01T15:02:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          48.989,
+          24.723
+        ]
+      },
+      "properties": {
+        "id": "GHW-025",
+        "name": "Ghawar GHW-025",
+        "basin": "Ghawar / Persian Gulf",
+        "basin_key": "ghawar",
+        "country": "Saudi Arabia",
+        "region": "Eastern Province",
+        "operator": "Sibir Neft",
+        "offshore": false,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 1546,
+        "wellhead_pressure_psi": 2349,
+        "depth_m": 2723,
+        "water_cut_pct": 48.3,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2021-12-13",
+        "last_update": "2026-09-01T18:29:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.204,
+          26.694
+        ]
+      },
+      "properties": {
+        "id": "GHW-026",
+        "name": "Ghawar GHW-026",
+        "basin": "Ghawar / Persian Gulf",
+        "basin_key": "ghawar",
+        "country": "Saudi Arabia",
+        "region": "Eastern Province",
+        "operator": "Sibir Neft",
+        "offshore": false,
+        "status": "shut-in",
+        "status_label": "Shut-in",
+        "type": "gas",
+        "type_label": "Gas producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1344,
+        "depth_m": 3093,
+        "water_cut_pct": 21.6,
+        "alerts": [
+          {
+            "code": "ESP_FAILURE_RISK",
+            "label": "ESP failure risk",
+            "severity": "critical"
+          }
+        ],
+        "alert_count": 1,
+        "health": "critical",
+        "spud_date": "2015-09-12",
+        "last_update": "2026-09-02T07:50:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          48.753,
+          26.927
+        ]
+      },
+      "properties": {
+        "id": "GHW-027",
+        "name": "Ghawar GHW-027",
+        "basin": "Ghawar / Persian Gulf",
+        "basin_key": "ghawar",
+        "country": "Saudi Arabia",
+        "region": "Eastern Province",
+        "operator": "BoHai Offshore Ltd.",
+        "offshore": false,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 797,
+        "wellhead_pressure_psi": 2640,
+        "depth_m": 3389,
+        "water_cut_pct": 59.7,
+        "alerts": [
+          {
+            "code": "SAND_PRODUCTION",
+            "label": "Sand production",
+            "severity": "warning"
+          }
+        ],
+        "alert_count": 1,
+        "health": "warning",
+        "spud_date": "2019-04-01",
+        "last_update": "2026-09-02T01:36:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.784,
+          24.471
+        ]
+      },
+      "properties": {
+        "id": "GHW-028",
+        "name": "Ghawar GHW-028",
+        "basin": "Ghawar / Persian Gulf",
+        "basin_key": "ghawar",
+        "country": "Saudi Arabia",
+        "region": "Eastern Province",
+        "operator": "Permian Resources Co.",
+        "offshore": false,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "injection",
+        "type_label": "Water/gas injector",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1963,
+        "depth_m": 2657,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "GAS_LOCK",
+            "label": "Gas lock / low intake",
+            "severity": "warning"
+          }
+        ],
+        "alert_count": 1,
+        "health": "warning",
+        "spud_date": "2026-02-18",
+        "last_update": "2026-09-01T11:37:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.235,
+          25.496
+        ]
+      },
+      "properties": {
+        "id": "GHW-029",
+        "name": "Ghawar GHW-029",
+        "basin": "Ghawar / Persian Gulf",
+        "basin_key": "ghawar",
+        "country": "Saudi Arabia",
+        "region": "Eastern Province",
+        "operator": "Arabian Upstream",
+        "offshore": false,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 1738,
+        "wellhead_pressure_psi": 2386,
+        "depth_m": 2671,
+        "water_cut_pct": 62.9,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2022-02-21",
+        "last_update": "2026-09-02T06:14:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.739,
+          28.015
+        ]
+      },
+      "properties": {
+        "id": "GOM-009",
+        "name": "Gulf of Mexico GOM-009",
+        "basin": "Gulf of Mexico",
+        "basin_key": "gulf_of_mexico",
+        "country": "United States",
+        "region": "Gulf of Mexico",
+        "operator": "BoHai Offshore Ltd.",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 576,
+        "wellhead_pressure_psi": 2670,
+        "depth_m": 3448,
+        "water_cut_pct": 44.3,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2015-12-27",
+        "last_update": "2026-09-02T00:32:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.086,
+          27.409
+        ]
+      },
+      "properties": {
+        "id": "GOM-010",
+        "name": "Gulf of Mexico GOM-010",
+        "basin": "Gulf of Mexico",
+        "basin_key": "gulf_of_mexico",
+        "country": "United States",
+        "region": "Gulf of Mexico",
+        "operator": "Sibir Neft",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 2121,
+        "wellhead_pressure_psi": 3026,
+        "depth_m": 4140,
+        "water_cut_pct": 24.6,
+        "alerts": [
+          {
+            "code": "OVERPRESSURE",
+            "label": "Annulus overpressure",
+            "severity": "critical"
+          }
+        ],
+        "alert_count": 1,
+        "health": "critical",
+        "spud_date": "2016-07-11",
+        "last_update": "2026-09-02T04:02:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.178,
+          28.126
+        ]
+      },
+      "properties": {
+        "id": "GOM-011",
+        "name": "Gulf of Mexico GOM-011",
+        "basin": "Gulf of Mexico",
+        "basin_key": "gulf_of_mexico",
+        "country": "United States",
+        "region": "Gulf of Mexico",
+        "operator": "Permian Resources Co.",
+        "offshore": true,
+        "status": "maintenance",
+        "status_label": "Maintenance",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 3715,
+        "depth_m": 5447,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "OVERPRESSURE",
+            "label": "Annulus overpressure",
+            "severity": "critical"
+          }
+        ],
+        "alert_count": 1,
+        "health": "critical",
+        "spud_date": "2017-08-05",
+        "last_update": "2026-09-02T06:49:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.827,
+          29.02
+        ]
+      },
+      "properties": {
+        "id": "GOM-012",
+        "name": "Gulf of Mexico GOM-012",
+        "basin": "Gulf of Mexico",
+        "basin_key": "gulf_of_mexico",
+        "country": "United States",
+        "region": "Gulf of Mexico",
+        "operator": "Permian Resources Co.",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 4033,
+        "wellhead_pressure_psi": 3356,
+        "depth_m": 4138,
+        "water_cut_pct": 5.1,
+        "alerts": [
+          {
+            "code": "SCALE_BUILDUP",
+            "label": "Scale build-up",
+            "severity": "warning"
+          }
+        ],
+        "alert_count": 1,
+        "health": "warning",
+        "spud_date": "2015-11-24",
+        "last_update": "2026-09-01T15:40:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.994,
+          28.214
+        ]
+      },
+      "properties": {
+        "id": "GOM-013",
+        "name": "Gulf of Mexico GOM-013",
+        "basin": "Gulf of Mexico",
+        "basin_key": "gulf_of_mexico",
+        "country": "United States",
+        "region": "Gulf of Mexico",
+        "operator": "Atl\u00e2ntico E&P",
+        "offshore": true,
+        "status": "drilling",
+        "status_label": "Drilling",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1405,
+        "depth_m": 2931,
+        "water_cut_pct": null,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2019-07-18",
+        "last_update": "2026-09-02T00:41:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.243,
+          26.124
+        ]
+      },
+      "properties": {
+        "id": "GOM-014",
+        "name": "Gulf of Mexico GOM-014",
+        "basin": "Gulf of Mexico",
+        "basin_key": "gulf_of_mexico",
+        "country": "United States",
+        "region": "Gulf of Mexico",
+        "operator": "Atl\u00e2ntico E&P",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 582,
+        "wellhead_pressure_psi": 3011,
+        "depth_m": 5256,
+        "water_cut_pct": 58.0,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2021-02-09",
+        "last_update": "2026-09-01T20:13:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.114,
+          28.641
+        ]
+      },
+      "properties": {
+        "id": "GOM-015",
+        "name": "Gulf of Mexico GOM-015",
+        "basin": "Gulf of Mexico",
+        "basin_key": "gulf_of_mexico",
+        "country": "United States",
+        "region": "Gulf of Mexico",
+        "operator": "Arabian Upstream",
+        "offshore": true,
+        "status": "shut-in",
+        "status_label": "Shut-in",
+        "type": "exploration",
+        "type_label": "Exploration",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1451,
+        "depth_m": 4923,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "CORROSION",
+            "label": "Corrosion inhibitor low",
+            "severity": "info"
+          }
+        ],
+        "alert_count": 1,
+        "health": "watch",
+        "spud_date": "2021-11-12",
+        "last_update": "2026-09-01T21:07:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.062,
+          4.467
+        ]
+      },
+      "properties": {
+        "id": "ND-038",
+        "name": "Niger Delta ND-038",
+        "basin": "Niger Delta",
+        "basin_key": "niger_delta",
+        "country": "Nigeria",
+        "region": "Niger Delta",
+        "operator": "Atl\u00e2ntico E&P",
+        "offshore": true,
+        "status": "shut-in",
+        "status_label": "Shut-in",
+        "type": "injection",
+        "type_label": "Water/gas injector",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 2163,
+        "depth_m": 4825,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "OVERPRESSURE",
+            "label": "Annulus overpressure",
+            "severity": "critical"
+          }
+        ],
+        "alert_count": 1,
+        "health": "critical",
+        "spud_date": "2019-09-10",
+        "last_update": "2026-09-01T12:31:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.052,
+          3.941
+        ]
+      },
+      "properties": {
+        "id": "ND-039",
+        "name": "Niger Delta ND-039",
+        "basin": "Niger Delta",
+        "basin_key": "niger_delta",
+        "country": "Nigeria",
+        "region": "Niger Delta",
+        "operator": "Atl\u00e2ntico E&P",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 2405,
+        "wellhead_pressure_psi": 2519,
+        "depth_m": 3625,
+        "water_cut_pct": 47.2,
+        "alerts": [
+          {
+            "code": "PRESSURE_DECLINE",
+            "label": "Wellhead pressure decline",
+            "severity": "warning"
+          }
+        ],
+        "alert_count": 1,
+        "health": "warning",
+        "spud_date": "2026-02-15",
+        "last_update": "2026-09-01T09:53:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.557,
+          4.131
+        ]
+      },
+      "properties": {
+        "id": "ND-040",
+        "name": "Niger Delta ND-040",
+        "basin": "Niger Delta",
+        "basin_key": "niger_delta",
+        "country": "Nigeria",
+        "region": "Niger Delta",
+        "operator": "BoHai Offshore Ltd.",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 1384,
+        "wellhead_pressure_psi": 3387,
+        "depth_m": 4203,
+        "water_cut_pct": 0.9,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2019-03-12",
+        "last_update": "2026-09-01T18:46:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.985,
+          4.283
+        ]
+      },
+      "properties": {
+        "id": "ND-041",
+        "name": "Niger Delta ND-041",
+        "basin": "Niger Delta",
+        "basin_key": "niger_delta",
+        "country": "Nigeria",
+        "region": "Niger Delta",
+        "operator": "BoHai Offshore Ltd.",
+        "offshore": true,
+        "status": "drilling",
+        "status_label": "Drilling",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1679,
+        "depth_m": 3769,
+        "water_cut_pct": null,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2015-05-30",
+        "last_update": "2026-09-01T11:29:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6,
+          4.731
+        ]
+      },
+      "properties": {
+        "id": "ND-042",
+        "name": "Niger Delta ND-042",
+        "basin": "Niger Delta",
+        "basin_key": "niger_delta",
+        "country": "Nigeria",
+        "region": "Niger Delta",
+        "operator": "GulfStar Energy",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 773,
+        "wellhead_pressure_psi": 3742,
+        "depth_m": 5074,
+        "water_cut_pct": 23.2,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2024-01-17",
+        "last_update": "2026-09-01T17:04:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.822,
+          4.363
+        ]
+      },
+      "properties": {
+        "id": "ND-043",
+        "name": "Niger Delta ND-043",
+        "basin": "Niger Delta",
+        "basin_key": "niger_delta",
+        "country": "Nigeria",
+        "region": "Niger Delta",
+        "operator": "Atl\u00e2ntico E&P",
+        "offshore": true,
+        "status": "maintenance",
+        "status_label": "Maintenance",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 2900,
+        "depth_m": 5098,
+        "water_cut_pct": null,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2023-07-12",
+        "last_update": "2026-09-02T06:27:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.504,
+          3.287
+        ]
+      },
+      "properties": {
+        "id": "ND-044",
+        "name": "Niger Delta ND-044",
+        "basin": "Niger Delta",
+        "basin_key": "niger_delta",
+        "country": "Nigeria",
+        "region": "Niger Delta",
+        "operator": "Arabian Upstream",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 3131,
+        "wellhead_pressure_psi": 2586,
+        "depth_m": 2708,
+        "water_cut_pct": 9.7,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2019-05-16",
+        "last_update": "2026-09-02T02:23:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.814,
+          57.003
+        ]
+      },
+      "properties": {
+        "id": "NS-001",
+        "name": "North Sea NS-001",
+        "basin": "North Sea",
+        "basin_key": "north_sea",
+        "country": "Norway / United Kingdom",
+        "region": "North Sea",
+        "operator": "Sibir Neft",
+        "offshore": true,
+        "status": "maintenance",
+        "status_label": "Maintenance",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 2157,
+        "depth_m": 4134,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "GAS_LOCK",
+            "label": "Gas lock / low intake",
+            "severity": "warning"
+          }
+        ],
+        "alert_count": 1,
+        "health": "warning",
+        "spud_date": "2026-06-11",
+        "last_update": "2026-09-02T03:23:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.546,
+          58.99
+        ]
+      },
+      "properties": {
+        "id": "NS-002",
+        "name": "North Sea NS-002",
+        "basin": "North Sea",
+        "basin_key": "north_sea",
+        "country": "Norway / United Kingdom",
+        "region": "North Sea",
+        "operator": "Arabian Upstream",
+        "offshore": true,
+        "status": "maintenance",
+        "status_label": "Maintenance",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 2039,
+        "depth_m": 3015,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "CORROSION",
+            "label": "Corrosion inhibitor low",
+            "severity": "info"
+          }
+        ],
+        "alert_count": 1,
+        "health": "watch",
+        "spud_date": "2025-01-11",
+        "last_update": "2026-09-02T07:16:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.61,
+          56.3
+        ]
+      },
+      "properties": {
+        "id": "NS-003",
+        "name": "North Sea NS-003",
+        "basin": "North Sea",
+        "basin_key": "north_sea",
+        "country": "Norway / United Kingdom",
+        "region": "North Sea",
+        "operator": "Arabian Upstream",
+        "offshore": true,
+        "status": "drilling",
+        "status_label": "Drilling",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1434,
+        "depth_m": 4241,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "SCALE_BUILDUP",
+            "label": "Scale build-up",
+            "severity": "warning"
+          }
+        ],
+        "alert_count": 1,
+        "health": "warning",
+        "spud_date": "2018-01-29",
+        "last_update": "2026-09-01T23:37:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.882,
+          56.736
+        ]
+      },
+      "properties": {
+        "id": "NS-004",
+        "name": "North Sea NS-004",
+        "basin": "North Sea",
+        "basin_key": "north_sea",
+        "country": "Norway / United Kingdom",
+        "region": "North Sea",
+        "operator": "Atl\u00e2ntico E&P",
+        "offshore": true,
+        "status": "drilling",
+        "status_label": "Drilling",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1050,
+        "depth_m": 2809,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "HIGH_WATER_CUT",
+            "label": "High water cut",
+            "severity": "warning"
+          }
+        ],
+        "alert_count": 1,
+        "health": "warning",
+        "spud_date": "2023-06-17",
+        "last_update": "2026-09-02T00:24:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.971,
+          57.442
+        ]
+      },
+      "properties": {
+        "id": "NS-005",
+        "name": "North Sea NS-005",
+        "basin": "North Sea",
+        "basin_key": "north_sea",
+        "country": "Norway / United Kingdom",
+        "region": "North Sea",
+        "operator": "Atl\u00e2ntico E&P",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 839,
+        "wellhead_pressure_psi": 3315,
+        "depth_m": 6090,
+        "water_cut_pct": 39.6,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2016-02-03",
+        "last_update": "2026-09-01T14:46:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.888,
+          60.453
+        ]
+      },
+      "properties": {
+        "id": "NS-006",
+        "name": "North Sea NS-006",
+        "basin": "North Sea",
+        "basin_key": "north_sea",
+        "country": "Norway / United Kingdom",
+        "region": "North Sea",
+        "operator": "GulfStar Energy",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "gas",
+        "type_label": "Gas producer",
+        "production_bbl_d": 2394,
+        "wellhead_pressure_psi": 4115,
+        "depth_m": 4525,
+        "water_cut_pct": 30.1,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2022-08-01",
+        "last_update": "2026-09-01T15:30:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.841,
+          57.888
+        ]
+      },
+      "properties": {
+        "id": "NS-007",
+        "name": "North Sea NS-007",
+        "basin": "North Sea",
+        "basin_key": "north_sea",
+        "country": "Norway / United Kingdom",
+        "region": "North Sea",
+        "operator": "BoHai Offshore Ltd.",
+        "offshore": true,
+        "status": "shut-in",
+        "status_label": "Shut-in",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1995,
+        "depth_m": 5292,
+        "water_cut_pct": 37.3,
+        "alerts": [
+          {
+            "code": "PRESSURE_DECLINE",
+            "label": "Wellhead pressure decline",
+            "severity": "warning"
+          }
+        ],
+        "alert_count": 1,
+        "health": "warning",
+        "spud_date": "2024-10-27",
+        "last_update": "2026-09-02T05:54:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.991,
+          59.613
+        ]
+      },
+      "properties": {
+        "id": "NS-008",
+        "name": "North Sea NS-008",
+        "basin": "North Sea",
+        "basin_key": "north_sea",
+        "country": "Norway / United Kingdom",
+        "region": "North Sea",
+        "operator": "Arabian Upstream",
+        "offshore": true,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 3992,
+        "wellhead_pressure_psi": 2486,
+        "depth_m": 4943,
+        "water_cut_pct": 0.0,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2016-06-18",
+        "last_update": "2026-09-02T04:42:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.386,
+          30.32
+        ]
+      },
+      "properties": {
+        "id": "PB-016",
+        "name": "Permian Basin PB-016",
+        "basin": "Permian Basin",
+        "basin_key": "permian",
+        "country": "United States",
+        "region": "West Texas",
+        "operator": "Permian Resources Co.",
+        "offshore": false,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 498,
+        "wellhead_pressure_psi": 3162,
+        "depth_m": 4887,
+        "water_cut_pct": 41.2,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2024-01-30",
+        "last_update": "2026-09-02T06:15:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.812,
+          30.311
+        ]
+      },
+      "properties": {
+        "id": "PB-017",
+        "name": "Permian Basin PB-017",
+        "basin": "Permian Basin",
+        "basin_key": "permian",
+        "country": "United States",
+        "region": "West Texas",
+        "operator": "Permian Resources Co.",
+        "offshore": false,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 1502,
+        "wellhead_pressure_psi": 2437,
+        "depth_m": 2233,
+        "water_cut_pct": 26.2,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2023-02-14",
+        "last_update": "2026-09-02T00:45:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.368,
+          31.578
+        ]
+      },
+      "properties": {
+        "id": "PB-018",
+        "name": "Permian Basin PB-018",
+        "basin": "Permian Basin",
+        "basin_key": "permian",
+        "country": "United States",
+        "region": "West Texas",
+        "operator": "NordPetro AS",
+        "offshore": false,
+        "status": "maintenance",
+        "status_label": "Maintenance",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 2574,
+        "depth_m": 4304,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "OVERPRESSURE",
+            "label": "Annulus overpressure",
+            "severity": "critical"
+          }
+        ],
+        "alert_count": 1,
+        "health": "critical",
+        "spud_date": "2021-06-26",
+        "last_update": "2026-09-02T01:13:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.138,
+          31.103
+        ]
+      },
+      "properties": {
+        "id": "PB-019",
+        "name": "Permian Basin PB-019",
+        "basin": "Permian Basin",
+        "basin_key": "permian",
+        "country": "United States",
+        "region": "West Texas",
+        "operator": "Sibir Neft",
+        "offshore": false,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 1669,
+        "wellhead_pressure_psi": 2841,
+        "depth_m": 4429,
+        "water_cut_pct": 19.8,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2018-11-02",
+        "last_update": "2026-09-01T22:07:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.557,
+          31.031
+        ]
+      },
+      "properties": {
+        "id": "PB-020",
+        "name": "Permian Basin PB-020",
+        "basin": "Permian Basin",
+        "basin_key": "permian",
+        "country": "United States",
+        "region": "West Texas",
+        "operator": "Atl\u00e2ntico E&P",
+        "offshore": false,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 306,
+        "wellhead_pressure_psi": 3300,
+        "depth_m": 4209,
+        "water_cut_pct": 21.7,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2023-10-18",
+        "last_update": "2026-09-01T22:34:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.024,
+          31.17
+        ]
+      },
+      "properties": {
+        "id": "PB-021",
+        "name": "Permian Basin PB-021",
+        "basin": "Permian Basin",
+        "basin_key": "permian",
+        "country": "United States",
+        "region": "West Texas",
+        "operator": "Arabian Upstream",
+        "offshore": false,
+        "status": "shut-in",
+        "status_label": "Shut-in",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1605,
+        "depth_m": 4060,
+        "water_cut_pct": 51.1,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2016-09-02",
+        "last_update": "2026-09-01T09:46:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.138,
+          30.35
+        ]
+      },
+      "properties": {
+        "id": "PB-022",
+        "name": "Permian Basin PB-022",
+        "basin": "Permian Basin",
+        "basin_key": "permian",
+        "country": "United States",
+        "region": "West Texas",
+        "operator": "Sibir Neft",
+        "offshore": false,
+        "status": "maintenance",
+        "status_label": "Maintenance",
+        "type": "gas",
+        "type_label": "Gas producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 3327,
+        "depth_m": 2764,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "SAND_PRODUCTION",
+            "label": "Sand production",
+            "severity": "warning"
+          }
+        ],
+        "alert_count": 1,
+        "health": "warning",
+        "spud_date": "2024-12-15",
+        "last_update": "2026-09-01T17:17:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          71.715,
+          60.784
+        ]
+      },
+      "properties": {
+        "id": "WS-045",
+        "name": "West Siberia WS-045",
+        "basin": "West Siberia",
+        "basin_key": "west_siberia",
+        "country": "Russia",
+        "region": "Khanty-Mansi",
+        "operator": "Permian Resources Co.",
+        "offshore": false,
+        "status": "drilling",
+        "status_label": "Drilling",
+        "type": "gas",
+        "type_label": "Gas producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 2663,
+        "depth_m": 4331,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "OVERPRESSURE",
+            "label": "Annulus overpressure",
+            "severity": "critical"
+          }
+        ],
+        "alert_count": 1,
+        "health": "critical",
+        "spud_date": "2016-05-04",
+        "last_update": "2026-09-02T08:18:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.422,
+          60.157
+        ]
+      },
+      "properties": {
+        "id": "WS-046",
+        "name": "West Siberia WS-046",
+        "basin": "West Siberia",
+        "basin_key": "west_siberia",
+        "country": "Russia",
+        "region": "Khanty-Mansi",
+        "operator": "GulfStar Energy",
+        "offshore": false,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "gas",
+        "type_label": "Gas producer",
+        "production_bbl_d": 2795,
+        "wellhead_pressure_psi": 4486,
+        "depth_m": 5095,
+        "water_cut_pct": 55.2,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2025-10-13",
+        "last_update": "2026-09-01T11:45:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.264,
+          63.149
+        ]
+      },
+      "properties": {
+        "id": "WS-047",
+        "name": "West Siberia WS-047",
+        "basin": "West Siberia",
+        "basin_key": "west_siberia",
+        "country": "Russia",
+        "region": "Khanty-Mansi",
+        "operator": "Sibir Neft",
+        "offshore": false,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "gas",
+        "type_label": "Gas producer",
+        "production_bbl_d": 6378,
+        "wellhead_pressure_psi": 3100,
+        "depth_m": 2107,
+        "water_cut_pct": 35.1,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2023-04-29",
+        "last_update": "2026-09-02T00:29:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.198,
+          59.729
+        ]
+      },
+      "properties": {
+        "id": "WS-048",
+        "name": "West Siberia WS-048",
+        "basin": "West Siberia",
+        "basin_key": "west_siberia",
+        "country": "Russia",
+        "region": "Khanty-Mansi",
+        "operator": "Permian Resources Co.",
+        "offshore": false,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "gas",
+        "type_label": "Gas producer",
+        "production_bbl_d": 4370,
+        "wellhead_pressure_psi": 3453,
+        "depth_m": 4760,
+        "water_cut_pct": 22.3,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2016-02-26",
+        "last_update": "2026-09-01T23:00:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.919,
+          62.677
+        ]
+      },
+      "properties": {
+        "id": "WS-049",
+        "name": "West Siberia WS-049",
+        "basin": "West Siberia",
+        "basin_key": "west_siberia",
+        "country": "Russia",
+        "region": "Khanty-Mansi",
+        "operator": "Sibir Neft",
+        "offshore": false,
+        "status": "maintenance",
+        "status_label": "Maintenance",
+        "type": "gas",
+        "type_label": "Gas producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 4469,
+        "depth_m": 5070,
+        "water_cut_pct": null,
+        "alerts": [
+          {
+            "code": "GAS_LOCK",
+            "label": "Gas lock / low intake",
+            "severity": "warning"
+          }
+        ],
+        "alert_count": 1,
+        "health": "warning",
+        "spud_date": "2019-12-20",
+        "last_update": "2026-09-02T08:05:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.64,
+          62.893
+        ]
+      },
+      "properties": {
+        "id": "WS-050",
+        "name": "West Siberia WS-050",
+        "basin": "West Siberia",
+        "basin_key": "west_siberia",
+        "country": "Russia",
+        "region": "Khanty-Mansi",
+        "operator": "BoHai Offshore Ltd.",
+        "offshore": false,
+        "status": "shut-in",
+        "status_label": "Shut-in",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1781,
+        "depth_m": 3861,
+        "water_cut_pct": 29.1,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2025-09-15",
+        "last_update": "2026-09-01T22:17:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.172,
+          62.517
+        ]
+      },
+      "properties": {
+        "id": "WS-051",
+        "name": "West Siberia WS-051",
+        "basin": "West Siberia",
+        "basin_key": "west_siberia",
+        "country": "Russia",
+        "region": "Khanty-Mansi",
+        "operator": "Permian Resources Co.",
+        "offshore": false,
+        "status": "producing",
+        "status_label": "Producing",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 1083,
+        "wellhead_pressure_psi": 2739,
+        "depth_m": 3212,
+        "water_cut_pct": 42.4,
+        "alerts": [],
+        "alert_count": 0,
+        "health": "nominal",
+        "spud_date": "2016-02-01",
+        "last_update": "2026-09-02T06:15:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.034,
+          60.72
+        ]
+      },
+      "properties": {
+        "id": "WS-052",
+        "name": "West Siberia WS-052",
+        "basin": "West Siberia",
+        "basin_key": "west_siberia",
+        "country": "Russia",
+        "region": "Khanty-Mansi",
+        "operator": "NordPetro AS",
+        "offshore": false,
+        "status": "shut-in",
+        "status_label": "Shut-in",
+        "type": "oil",
+        "type_label": "Oil producer",
+        "production_bbl_d": 0,
+        "wellhead_pressure_psi": 1273,
+        "depth_m": 4675,
+        "water_cut_pct": 24.4,
+        "alerts": [
+          {
+            "code": "HIGH_WATER_CUT",
+            "label": "High water cut",
+            "severity": "warning"
+          }
+        ],
+        "alert_count": 1,
+        "health": "warning",
+        "spud_date": "2021-05-06",
+        "last_update": "2026-09-01T16:44:39+00:00"
+      }
+    }
+  ]
+}

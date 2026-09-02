@@ -1,0 +1,1287 @@
+{
+  "generated_at": "2026-09-02T10:18:30+00:00",
+  "count": 57,
+  "distinct_parts": 23,
+  "note": "Synthetic demo inventory -- not real stock data.",
+  "warehouses": [
+    {
+      "code": "WH-ABZ",
+      "name": "Aberdeen Supply Base",
+      "region": "North Sea",
+      "country": "United Kingdom"
+    },
+    {
+      "code": "WH-HOU",
+      "name": "Houston Distribution Center",
+      "region": "Gulf of Mexico",
+      "country": "United States"
+    },
+    {
+      "code": "WH-MID",
+      "name": "Midland Yard",
+      "region": "Permian Basin",
+      "country": "United States"
+    },
+    {
+      "code": "WH-DMM",
+      "name": "Dammam Central Store",
+      "region": "Ghawar / Persian Gulf",
+      "country": "Saudi Arabia"
+    },
+    {
+      "code": "WH-MCE",
+      "name": "Maca\u00e9 Logistics Hub",
+      "region": "Campos Basin",
+      "country": "Brazil"
+    },
+    {
+      "code": "WH-PHC",
+      "name": "Port Harcourt Warehouse",
+      "region": "Niger Delta",
+      "country": "Nigeria"
+    },
+    {
+      "code": "WH-SGT",
+      "name": "Surgut Depot",
+      "region": "West Siberia",
+      "country": "Russia"
+    },
+    {
+      "code": "WH-TSN",
+      "name": "Tianjin Marine Base",
+      "region": "Bohai Bay",
+      "country": "China"
+    }
+  ],
+  "records": [
+    {
+      "sku": "P-1000-WH-DMM",
+      "part_id": "P-1000",
+      "name": "Annulus safety valve",
+      "category": "Wellhead & X-tree",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE"
+      ],
+      "addresses": [
+        "Annulus overpressure"
+      ],
+      "warehouse": "WH-DMM",
+      "warehouse_name": "Dammam Central Store",
+      "region": "Ghawar / Persian Gulf",
+      "country": "Saudi Arabia",
+      "quantity": 1,
+      "in_stock": true,
+      "lead_time_days": 5,
+      "unit_cost_usd": 420
+    },
+    {
+      "sku": "P-1000-WH-MID",
+      "part_id": "P-1000",
+      "name": "Annulus safety valve",
+      "category": "Wellhead & X-tree",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE"
+      ],
+      "addresses": [
+        "Annulus overpressure"
+      ],
+      "warehouse": "WH-MID",
+      "warehouse_name": "Midland Yard",
+      "region": "Permian Basin",
+      "country": "United States",
+      "quantity": 0,
+      "in_stock": false,
+      "lead_time_days": 30,
+      "unit_cost_usd": 420
+    },
+    {
+      "sku": "P-1000-WH-PHC",
+      "part_id": "P-1000",
+      "name": "Annulus safety valve",
+      "category": "Wellhead & X-tree",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE"
+      ],
+      "addresses": [
+        "Annulus overpressure"
+      ],
+      "warehouse": "WH-PHC",
+      "warehouse_name": "Port Harcourt Warehouse",
+      "region": "Niger Delta",
+      "country": "Nigeria",
+      "quantity": 0,
+      "in_stock": false,
+      "lead_time_days": 21,
+      "unit_cost_usd": 420
+    },
+    {
+      "sku": "P-1001-WH-HOU",
+      "part_id": "P-1001",
+      "name": "Wellhead seal assembly kit",
+      "category": "Wellhead & X-tree",
+      "unit": "kit",
+      "issue_codes": [
+        "OVERPRESSURE",
+        "CORROSION"
+      ],
+      "addresses": [
+        "Annulus overpressure",
+        "Corrosion inhibitor low"
+      ],
+      "warehouse": "WH-HOU",
+      "warehouse_name": "Houston Distribution Center",
+      "region": "Gulf of Mexico",
+      "country": "United States",
+      "quantity": 14,
+      "in_stock": true,
+      "lead_time_days": 3,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1001-WH-MCE",
+      "part_id": "P-1001",
+      "name": "Wellhead seal assembly kit",
+      "category": "Wellhead & X-tree",
+      "unit": "kit",
+      "issue_codes": [
+        "OVERPRESSURE",
+        "CORROSION"
+      ],
+      "addresses": [
+        "Annulus overpressure",
+        "Corrosion inhibitor low"
+      ],
+      "warehouse": "WH-MCE",
+      "warehouse_name": "Maca\u00e9 Logistics Hub",
+      "region": "Campos Basin",
+      "country": "Brazil",
+      "quantity": 10,
+      "in_stock": true,
+      "lead_time_days": 3,
+      "unit_cost_usd": 5400
+    },
+    {
+      "sku": "P-1002-WH-ABZ",
+      "part_id": "P-1002",
+      "name": "Casing head pack-off",
+      "category": "Wellhead & X-tree",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE"
+      ],
+      "addresses": [
+        "Annulus overpressure"
+      ],
+      "warehouse": "WH-ABZ",
+      "warehouse_name": "Aberdeen Supply Base",
+      "region": "North Sea",
+      "country": "United Kingdom",
+      "quantity": 3,
+      "in_stock": true,
+      "lead_time_days": 7,
+      "unit_cost_usd": 2600
+    },
+    {
+      "sku": "P-1002-WH-HOU",
+      "part_id": "P-1002",
+      "name": "Casing head pack-off",
+      "category": "Wellhead & X-tree",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE"
+      ],
+      "addresses": [
+        "Annulus overpressure"
+      ],
+      "warehouse": "WH-HOU",
+      "warehouse_name": "Houston Distribution Center",
+      "region": "Gulf of Mexico",
+      "country": "United States",
+      "quantity": 0,
+      "in_stock": false,
+      "lead_time_days": 7,
+      "unit_cost_usd": 5400
+    },
+    {
+      "sku": "P-1002-WH-TSN",
+      "part_id": "P-1002",
+      "name": "Casing head pack-off",
+      "category": "Wellhead & X-tree",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE"
+      ],
+      "addresses": [
+        "Annulus overpressure"
+      ],
+      "warehouse": "WH-TSN",
+      "warehouse_name": "Tianjin Marine Base",
+      "region": "Bohai Bay",
+      "country": "China",
+      "quantity": 14,
+      "in_stock": true,
+      "lead_time_days": 5,
+      "unit_cost_usd": 420
+    },
+    {
+      "sku": "P-1003-WH-ABZ",
+      "part_id": "P-1003",
+      "name": "Christmas tree gate valve",
+      "category": "Wellhead & X-tree",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE",
+        "PRESSURE_DECLINE"
+      ],
+      "addresses": [
+        "Annulus overpressure",
+        "Wellhead pressure decline"
+      ],
+      "warehouse": "WH-ABZ",
+      "warehouse_name": "Aberdeen Supply Base",
+      "region": "North Sea",
+      "country": "United Kingdom",
+      "quantity": 0,
+      "in_stock": false,
+      "lead_time_days": 45,
+      "unit_cost_usd": 5400
+    },
+    {
+      "sku": "P-1003-WH-PHC",
+      "part_id": "P-1003",
+      "name": "Christmas tree gate valve",
+      "category": "Wellhead & X-tree",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE",
+        "PRESSURE_DECLINE"
+      ],
+      "addresses": [
+        "Annulus overpressure",
+        "Wellhead pressure decline"
+      ],
+      "warehouse": "WH-PHC",
+      "warehouse_name": "Port Harcourt Warehouse",
+      "region": "Niger Delta",
+      "country": "Nigeria",
+      "quantity": 2,
+      "in_stock": true,
+      "lead_time_days": 3,
+      "unit_cost_usd": 5400
+    },
+    {
+      "sku": "P-1004-WH-DMM",
+      "part_id": "P-1004",
+      "name": "Tubing hanger seal",
+      "category": "Wellhead & X-tree",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE"
+      ],
+      "addresses": [
+        "Annulus overpressure"
+      ],
+      "warehouse": "WH-DMM",
+      "warehouse_name": "Dammam Central Store",
+      "region": "Ghawar / Persian Gulf",
+      "country": "Saudi Arabia",
+      "quantity": 12,
+      "in_stock": true,
+      "lead_time_days": 5,
+      "unit_cost_usd": 420
+    },
+    {
+      "sku": "P-1004-WH-MCE",
+      "part_id": "P-1004",
+      "name": "Tubing hanger seal",
+      "category": "Wellhead & X-tree",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE"
+      ],
+      "addresses": [
+        "Annulus overpressure"
+      ],
+      "warehouse": "WH-MCE",
+      "warehouse_name": "Maca\u00e9 Logistics Hub",
+      "region": "Campos Basin",
+      "country": "Brazil",
+      "quantity": 9,
+      "in_stock": true,
+      "lead_time_days": 10,
+      "unit_cost_usd": 1200
+    },
+    {
+      "sku": "P-1004-WH-PHC",
+      "part_id": "P-1004",
+      "name": "Tubing hanger seal",
+      "category": "Wellhead & X-tree",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE"
+      ],
+      "addresses": [
+        "Annulus overpressure"
+      ],
+      "warehouse": "WH-PHC",
+      "warehouse_name": "Port Harcourt Warehouse",
+      "region": "Niger Delta",
+      "country": "Nigeria",
+      "quantity": 6,
+      "in_stock": true,
+      "lead_time_days": 7,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1005-WH-ABZ",
+      "part_id": "P-1005",
+      "name": "Production packer",
+      "category": "Downhole",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE",
+        "HIGH_WATER_CUT"
+      ],
+      "addresses": [
+        "Annulus overpressure",
+        "High water cut"
+      ],
+      "warehouse": "WH-ABZ",
+      "warehouse_name": "Aberdeen Supply Base",
+      "region": "North Sea",
+      "country": "United Kingdom",
+      "quantity": 0,
+      "in_stock": false,
+      "lead_time_days": 45,
+      "unit_cost_usd": 420
+    },
+    {
+      "sku": "P-1005-WH-MCE",
+      "part_id": "P-1005",
+      "name": "Production packer",
+      "category": "Downhole",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE",
+        "HIGH_WATER_CUT"
+      ],
+      "addresses": [
+        "Annulus overpressure",
+        "High water cut"
+      ],
+      "warehouse": "WH-MCE",
+      "warehouse_name": "Maca\u00e9 Logistics Hub",
+      "region": "Campos Basin",
+      "country": "Brazil",
+      "quantity": 0,
+      "in_stock": false,
+      "lead_time_days": 21,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1005-WH-TSN",
+      "part_id": "P-1005",
+      "name": "Production packer",
+      "category": "Downhole",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE",
+        "HIGH_WATER_CUT"
+      ],
+      "addresses": [
+        "Annulus overpressure",
+        "High water cut"
+      ],
+      "warehouse": "WH-TSN",
+      "warehouse_name": "Tianjin Marine Base",
+      "region": "Bohai Bay",
+      "country": "China",
+      "quantity": 3,
+      "in_stock": true,
+      "lead_time_days": 10,
+      "unit_cost_usd": 2600
+    },
+    {
+      "sku": "P-1006-WH-MID",
+      "part_id": "P-1006",
+      "name": "Water shut-off packer",
+      "category": "Downhole",
+      "unit": "unit",
+      "issue_codes": [
+        "HIGH_WATER_CUT"
+      ],
+      "addresses": [
+        "High water cut"
+      ],
+      "warehouse": "WH-MID",
+      "warehouse_name": "Midland Yard",
+      "region": "Permian Basin",
+      "country": "United States",
+      "quantity": 1,
+      "in_stock": true,
+      "lead_time_days": 7,
+      "unit_cost_usd": 9800
+    },
+    {
+      "sku": "P-1006-WH-PHC",
+      "part_id": "P-1006",
+      "name": "Water shut-off packer",
+      "category": "Downhole",
+      "unit": "unit",
+      "issue_codes": [
+        "HIGH_WATER_CUT"
+      ],
+      "addresses": [
+        "High water cut"
+      ],
+      "warehouse": "WH-PHC",
+      "warehouse_name": "Port Harcourt Warehouse",
+      "region": "Niger Delta",
+      "country": "Nigeria",
+      "quantity": 10,
+      "in_stock": true,
+      "lead_time_days": 10,
+      "unit_cost_usd": 420
+    },
+    {
+      "sku": "P-1006-WH-TSN",
+      "part_id": "P-1006",
+      "name": "Water shut-off packer",
+      "category": "Downhole",
+      "unit": "unit",
+      "issue_codes": [
+        "HIGH_WATER_CUT"
+      ],
+      "addresses": [
+        "High water cut"
+      ],
+      "warehouse": "WH-TSN",
+      "warehouse_name": "Tianjin Marine Base",
+      "region": "Bohai Bay",
+      "country": "China",
+      "quantity": 5,
+      "in_stock": true,
+      "lead_time_days": 10,
+      "unit_cost_usd": 9800
+    },
+    {
+      "sku": "P-1007-WH-DMM",
+      "part_id": "P-1007",
+      "name": "Sand screen (premium)",
+      "category": "Downhole",
+      "unit": "joint",
+      "issue_codes": [
+        "SAND_PRODUCTION"
+      ],
+      "addresses": [
+        "Sand production"
+      ],
+      "warehouse": "WH-DMM",
+      "warehouse_name": "Dammam Central Store",
+      "region": "Ghawar / Persian Gulf",
+      "country": "Saudi Arabia",
+      "quantity": 0,
+      "in_stock": false,
+      "lead_time_days": 14,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1007-WH-MCE",
+      "part_id": "P-1007",
+      "name": "Sand screen (premium)",
+      "category": "Downhole",
+      "unit": "joint",
+      "issue_codes": [
+        "SAND_PRODUCTION"
+      ],
+      "addresses": [
+        "Sand production"
+      ],
+      "warehouse": "WH-MCE",
+      "warehouse_name": "Maca\u00e9 Logistics Hub",
+      "region": "Campos Basin",
+      "country": "Brazil",
+      "quantity": 6,
+      "in_stock": true,
+      "lead_time_days": 3,
+      "unit_cost_usd": 2600
+    },
+    {
+      "sku": "P-1007-WH-PHC",
+      "part_id": "P-1007",
+      "name": "Sand screen (premium)",
+      "category": "Downhole",
+      "unit": "joint",
+      "issue_codes": [
+        "SAND_PRODUCTION"
+      ],
+      "addresses": [
+        "Sand production"
+      ],
+      "warehouse": "WH-PHC",
+      "warehouse_name": "Port Harcourt Warehouse",
+      "region": "Niger Delta",
+      "country": "Nigeria",
+      "quantity": 10,
+      "in_stock": true,
+      "lead_time_days": 3,
+      "unit_cost_usd": 2600
+    },
+    {
+      "sku": "P-1008-WH-DMM",
+      "part_id": "P-1008",
+      "name": "Gravel pack assembly",
+      "category": "Downhole",
+      "unit": "assembly",
+      "issue_codes": [
+        "SAND_PRODUCTION"
+      ],
+      "addresses": [
+        "Sand production"
+      ],
+      "warehouse": "WH-DMM",
+      "warehouse_name": "Dammam Central Store",
+      "region": "Ghawar / Persian Gulf",
+      "country": "Saudi Arabia",
+      "quantity": 9,
+      "in_stock": true,
+      "lead_time_days": 7,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1008-WH-SGT",
+      "part_id": "P-1008",
+      "name": "Gravel pack assembly",
+      "category": "Downhole",
+      "unit": "assembly",
+      "issue_codes": [
+        "SAND_PRODUCTION"
+      ],
+      "addresses": [
+        "Sand production"
+      ],
+      "warehouse": "WH-SGT",
+      "warehouse_name": "Surgut Depot",
+      "region": "West Siberia",
+      "country": "Russia",
+      "quantity": 8,
+      "in_stock": true,
+      "lead_time_days": 3,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1009-WH-DMM",
+      "part_id": "P-1009",
+      "name": "Corrosion-resistant tubing joint (13Cr)",
+      "category": "Downhole",
+      "unit": "joint",
+      "issue_codes": [
+        "CORROSION",
+        "H2S_DETECTED"
+      ],
+      "addresses": [
+        "Corrosion inhibitor low",
+        "H2S detected"
+      ],
+      "warehouse": "WH-DMM",
+      "warehouse_name": "Dammam Central Store",
+      "region": "Ghawar / Persian Gulf",
+      "country": "Saudi Arabia",
+      "quantity": 4,
+      "in_stock": true,
+      "lead_time_days": 3,
+      "unit_cost_usd": 2600
+    },
+    {
+      "sku": "P-1009-WH-MCE",
+      "part_id": "P-1009",
+      "name": "Corrosion-resistant tubing joint (13Cr)",
+      "category": "Downhole",
+      "unit": "joint",
+      "issue_codes": [
+        "CORROSION",
+        "H2S_DETECTED"
+      ],
+      "addresses": [
+        "Corrosion inhibitor low",
+        "H2S detected"
+      ],
+      "warehouse": "WH-MCE",
+      "warehouse_name": "Maca\u00e9 Logistics Hub",
+      "region": "Campos Basin",
+      "country": "Brazil",
+      "quantity": 11,
+      "in_stock": true,
+      "lead_time_days": 10,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1009-WH-PHC",
+      "part_id": "P-1009",
+      "name": "Corrosion-resistant tubing joint (13Cr)",
+      "category": "Downhole",
+      "unit": "joint",
+      "issue_codes": [
+        "CORROSION",
+        "H2S_DETECTED"
+      ],
+      "addresses": [
+        "Corrosion inhibitor low",
+        "H2S detected"
+      ],
+      "warehouse": "WH-PHC",
+      "warehouse_name": "Port Harcourt Warehouse",
+      "region": "Niger Delta",
+      "country": "Nigeria",
+      "quantity": 0,
+      "in_stock": false,
+      "lead_time_days": 10,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1010-WH-MCE",
+      "part_id": "P-1010",
+      "name": "Surface-controlled subsurface safety valve",
+      "category": "Downhole",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE",
+        "PRESSURE_DECLINE"
+      ],
+      "addresses": [
+        "Annulus overpressure",
+        "Wellhead pressure decline"
+      ],
+      "warehouse": "WH-MCE",
+      "warehouse_name": "Maca\u00e9 Logistics Hub",
+      "region": "Campos Basin",
+      "country": "Brazil",
+      "quantity": 0,
+      "in_stock": false,
+      "lead_time_days": 21,
+      "unit_cost_usd": 5400
+    },
+    {
+      "sku": "P-1010-WH-MID",
+      "part_id": "P-1010",
+      "name": "Surface-controlled subsurface safety valve",
+      "category": "Downhole",
+      "unit": "unit",
+      "issue_codes": [
+        "OVERPRESSURE",
+        "PRESSURE_DECLINE"
+      ],
+      "addresses": [
+        "Annulus overpressure",
+        "Wellhead pressure decline"
+      ],
+      "warehouse": "WH-MID",
+      "warehouse_name": "Midland Yard",
+      "region": "Permian Basin",
+      "country": "United States",
+      "quantity": 10,
+      "in_stock": true,
+      "lead_time_days": 7,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1011-WH-SGT",
+      "part_id": "P-1011",
+      "name": "ESP pump stage cartridge",
+      "category": "Artificial lift",
+      "unit": "unit",
+      "issue_codes": [
+        "ESP_FAILURE_RISK"
+      ],
+      "addresses": [
+        "ESP failure risk"
+      ],
+      "warehouse": "WH-SGT",
+      "warehouse_name": "Surgut Depot",
+      "region": "West Siberia",
+      "country": "Russia",
+      "quantity": 2,
+      "in_stock": true,
+      "lead_time_days": 10,
+      "unit_cost_usd": 9800
+    },
+    {
+      "sku": "P-1011-WH-TSN",
+      "part_id": "P-1011",
+      "name": "ESP pump stage cartridge",
+      "category": "Artificial lift",
+      "unit": "unit",
+      "issue_codes": [
+        "ESP_FAILURE_RISK"
+      ],
+      "addresses": [
+        "ESP failure risk"
+      ],
+      "warehouse": "WH-TSN",
+      "warehouse_name": "Tianjin Marine Base",
+      "region": "Bohai Bay",
+      "country": "China",
+      "quantity": 14,
+      "in_stock": true,
+      "lead_time_days": 10,
+      "unit_cost_usd": 2600
+    },
+    {
+      "sku": "P-1012-WH-ABZ",
+      "part_id": "P-1012",
+      "name": "ESP motor",
+      "category": "Artificial lift",
+      "unit": "unit",
+      "issue_codes": [
+        "ESP_FAILURE_RISK"
+      ],
+      "addresses": [
+        "ESP failure risk"
+      ],
+      "warehouse": "WH-ABZ",
+      "warehouse_name": "Aberdeen Supply Base",
+      "region": "North Sea",
+      "country": "United Kingdom",
+      "quantity": 8,
+      "in_stock": true,
+      "lead_time_days": 5,
+      "unit_cost_usd": 420
+    },
+    {
+      "sku": "P-1012-WH-HOU",
+      "part_id": "P-1012",
+      "name": "ESP motor",
+      "category": "Artificial lift",
+      "unit": "unit",
+      "issue_codes": [
+        "ESP_FAILURE_RISK"
+      ],
+      "addresses": [
+        "ESP failure risk"
+      ],
+      "warehouse": "WH-HOU",
+      "warehouse_name": "Houston Distribution Center",
+      "region": "Gulf of Mexico",
+      "country": "United States",
+      "quantity": 1,
+      "in_stock": true,
+      "lead_time_days": 3,
+      "unit_cost_usd": 420
+    },
+    {
+      "sku": "P-1012-WH-TSN",
+      "part_id": "P-1012",
+      "name": "ESP motor",
+      "category": "Artificial lift",
+      "unit": "unit",
+      "issue_codes": [
+        "ESP_FAILURE_RISK"
+      ],
+      "addresses": [
+        "ESP failure risk"
+      ],
+      "warehouse": "WH-TSN",
+      "warehouse_name": "Tianjin Marine Base",
+      "region": "Bohai Bay",
+      "country": "China",
+      "quantity": 9,
+      "in_stock": true,
+      "lead_time_days": 3,
+      "unit_cost_usd": 1200
+    },
+    {
+      "sku": "P-1013-WH-HOU",
+      "part_id": "P-1013",
+      "name": "ESP power cable (spooled)",
+      "category": "Artificial lift",
+      "unit": "reel",
+      "issue_codes": [
+        "ESP_FAILURE_RISK"
+      ],
+      "addresses": [
+        "ESP failure risk"
+      ],
+      "warehouse": "WH-HOU",
+      "warehouse_name": "Houston Distribution Center",
+      "region": "Gulf of Mexico",
+      "country": "United States",
+      "quantity": 0,
+      "in_stock": false,
+      "lead_time_days": 21,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1013-WH-SGT",
+      "part_id": "P-1013",
+      "name": "ESP power cable (spooled)",
+      "category": "Artificial lift",
+      "unit": "reel",
+      "issue_codes": [
+        "ESP_FAILURE_RISK"
+      ],
+      "addresses": [
+        "ESP failure risk"
+      ],
+      "warehouse": "WH-SGT",
+      "warehouse_name": "Surgut Depot",
+      "region": "West Siberia",
+      "country": "Russia",
+      "quantity": 6,
+      "in_stock": true,
+      "lead_time_days": 7,
+      "unit_cost_usd": 2600
+    },
+    {
+      "sku": "P-1014-WH-HOU",
+      "part_id": "P-1014",
+      "name": "Downhole gas separator",
+      "category": "Artificial lift",
+      "unit": "unit",
+      "issue_codes": [
+        "ESP_FAILURE_RISK",
+        "GAS_LOCK"
+      ],
+      "addresses": [
+        "ESP failure risk",
+        "Gas lock / low intake"
+      ],
+      "warehouse": "WH-HOU",
+      "warehouse_name": "Houston Distribution Center",
+      "region": "Gulf of Mexico",
+      "country": "United States",
+      "quantity": 8,
+      "in_stock": true,
+      "lead_time_days": 10,
+      "unit_cost_usd": 2600
+    },
+    {
+      "sku": "P-1014-WH-SGT",
+      "part_id": "P-1014",
+      "name": "Downhole gas separator",
+      "category": "Artificial lift",
+      "unit": "unit",
+      "issue_codes": [
+        "ESP_FAILURE_RISK",
+        "GAS_LOCK"
+      ],
+      "addresses": [
+        "ESP failure risk",
+        "Gas lock / low intake"
+      ],
+      "warehouse": "WH-SGT",
+      "warehouse_name": "Surgut Depot",
+      "region": "West Siberia",
+      "country": "Russia",
+      "quantity": 3,
+      "in_stock": true,
+      "lead_time_days": 3,
+      "unit_cost_usd": 9800
+    },
+    {
+      "sku": "P-1015-WH-DMM",
+      "part_id": "P-1015",
+      "name": "Gas-lock breaker valve",
+      "category": "Artificial lift",
+      "unit": "unit",
+      "issue_codes": [
+        "GAS_LOCK"
+      ],
+      "addresses": [
+        "Gas lock / low intake"
+      ],
+      "warehouse": "WH-DMM",
+      "warehouse_name": "Dammam Central Store",
+      "region": "Ghawar / Persian Gulf",
+      "country": "Saudi Arabia",
+      "quantity": 9,
+      "in_stock": true,
+      "lead_time_days": 7,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1015-WH-MCE",
+      "part_id": "P-1015",
+      "name": "Gas-lock breaker valve",
+      "category": "Artificial lift",
+      "unit": "unit",
+      "issue_codes": [
+        "GAS_LOCK"
+      ],
+      "addresses": [
+        "Gas lock / low intake"
+      ],
+      "warehouse": "WH-MCE",
+      "warehouse_name": "Maca\u00e9 Logistics Hub",
+      "region": "Campos Basin",
+      "country": "Brazil",
+      "quantity": 0,
+      "in_stock": false,
+      "lead_time_days": 7,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1015-WH-PHC",
+      "part_id": "P-1015",
+      "name": "Gas-lock breaker valve",
+      "category": "Artificial lift",
+      "unit": "unit",
+      "issue_codes": [
+        "GAS_LOCK"
+      ],
+      "addresses": [
+        "Gas lock / low intake"
+      ],
+      "warehouse": "WH-PHC",
+      "warehouse_name": "Port Harcourt Warehouse",
+      "region": "Niger Delta",
+      "country": "Nigeria",
+      "quantity": 1,
+      "in_stock": true,
+      "lead_time_days": 7,
+      "unit_cost_usd": 9800
+    },
+    {
+      "sku": "P-1016-WH-MCE",
+      "part_id": "P-1016",
+      "name": "H2S scavenger",
+      "category": "Chemicals",
+      "unit": "drum",
+      "issue_codes": [
+        "H2S_DETECTED"
+      ],
+      "addresses": [
+        "H2S detected"
+      ],
+      "warehouse": "WH-MCE",
+      "warehouse_name": "Maca\u00e9 Logistics Hub",
+      "region": "Campos Basin",
+      "country": "Brazil",
+      "quantity": 3,
+      "in_stock": true,
+      "lead_time_days": 7,
+      "unit_cost_usd": 15400
+    },
+    {
+      "sku": "P-1016-WH-TSN",
+      "part_id": "P-1016",
+      "name": "H2S scavenger",
+      "category": "Chemicals",
+      "unit": "drum",
+      "issue_codes": [
+        "H2S_DETECTED"
+      ],
+      "addresses": [
+        "H2S detected"
+      ],
+      "warehouse": "WH-TSN",
+      "warehouse_name": "Tianjin Marine Base",
+      "region": "Bohai Bay",
+      "country": "China",
+      "quantity": 9,
+      "in_stock": true,
+      "lead_time_days": 7,
+      "unit_cost_usd": 9800
+    },
+    {
+      "sku": "P-1017-WH-DMM",
+      "part_id": "P-1017",
+      "name": "Corrosion inhibitor",
+      "category": "Chemicals",
+      "unit": "drum",
+      "issue_codes": [
+        "CORROSION"
+      ],
+      "addresses": [
+        "Corrosion inhibitor low"
+      ],
+      "warehouse": "WH-DMM",
+      "warehouse_name": "Dammam Central Store",
+      "region": "Ghawar / Persian Gulf",
+      "country": "Saudi Arabia",
+      "quantity": 7,
+      "in_stock": true,
+      "lead_time_days": 5,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1017-WH-SGT",
+      "part_id": "P-1017",
+      "name": "Corrosion inhibitor",
+      "category": "Chemicals",
+      "unit": "drum",
+      "issue_codes": [
+        "CORROSION"
+      ],
+      "addresses": [
+        "Corrosion inhibitor low"
+      ],
+      "warehouse": "WH-SGT",
+      "warehouse_name": "Surgut Depot",
+      "region": "West Siberia",
+      "country": "Russia",
+      "quantity": 6,
+      "in_stock": true,
+      "lead_time_days": 3,
+      "unit_cost_usd": 420
+    },
+    {
+      "sku": "P-1018-WH-HOU",
+      "part_id": "P-1018",
+      "name": "Scale inhibitor",
+      "category": "Chemicals",
+      "unit": "drum",
+      "issue_codes": [
+        "SCALE_BUILDUP"
+      ],
+      "addresses": [
+        "Scale build-up"
+      ],
+      "warehouse": "WH-HOU",
+      "warehouse_name": "Houston Distribution Center",
+      "region": "Gulf of Mexico",
+      "country": "United States",
+      "quantity": 4,
+      "in_stock": true,
+      "lead_time_days": 10,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1018-WH-MID",
+      "part_id": "P-1018",
+      "name": "Scale inhibitor",
+      "category": "Chemicals",
+      "unit": "drum",
+      "issue_codes": [
+        "SCALE_BUILDUP"
+      ],
+      "addresses": [
+        "Scale build-up"
+      ],
+      "warehouse": "WH-MID",
+      "warehouse_name": "Midland Yard",
+      "region": "Permian Basin",
+      "country": "United States",
+      "quantity": 6,
+      "in_stock": true,
+      "lead_time_days": 7,
+      "unit_cost_usd": 420
+    },
+    {
+      "sku": "P-1018-WH-TSN",
+      "part_id": "P-1018",
+      "name": "Scale inhibitor",
+      "category": "Chemicals",
+      "unit": "drum",
+      "issue_codes": [
+        "SCALE_BUILDUP"
+      ],
+      "addresses": [
+        "Scale build-up"
+      ],
+      "warehouse": "WH-TSN",
+      "warehouse_name": "Tianjin Marine Base",
+      "region": "Bohai Bay",
+      "country": "China",
+      "quantity": 6,
+      "in_stock": true,
+      "lead_time_days": 10,
+      "unit_cost_usd": 15400
+    },
+    {
+      "sku": "P-1019-WH-DMM",
+      "part_id": "P-1019",
+      "name": "Scale dissolver batch",
+      "category": "Chemicals",
+      "unit": "batch",
+      "issue_codes": [
+        "SCALE_BUILDUP"
+      ],
+      "addresses": [
+        "Scale build-up"
+      ],
+      "warehouse": "WH-DMM",
+      "warehouse_name": "Dammam Central Store",
+      "region": "Ghawar / Persian Gulf",
+      "country": "Saudi Arabia",
+      "quantity": 10,
+      "in_stock": true,
+      "lead_time_days": 3,
+      "unit_cost_usd": 2600
+    },
+    {
+      "sku": "P-1019-WH-MCE",
+      "part_id": "P-1019",
+      "name": "Scale dissolver batch",
+      "category": "Chemicals",
+      "unit": "batch",
+      "issue_codes": [
+        "SCALE_BUILDUP"
+      ],
+      "addresses": [
+        "Scale build-up"
+      ],
+      "warehouse": "WH-MCE",
+      "warehouse_name": "Maca\u00e9 Logistics Hub",
+      "region": "Campos Basin",
+      "country": "Brazil",
+      "quantity": 7,
+      "in_stock": true,
+      "lead_time_days": 5,
+      "unit_cost_usd": 2600
+    },
+    {
+      "sku": "P-1019-WH-TSN",
+      "part_id": "P-1019",
+      "name": "Scale dissolver batch",
+      "category": "Chemicals",
+      "unit": "batch",
+      "issue_codes": [
+        "SCALE_BUILDUP"
+      ],
+      "addresses": [
+        "Scale build-up"
+      ],
+      "warehouse": "WH-TSN",
+      "warehouse_name": "Tianjin Marine Base",
+      "region": "Bohai Bay",
+      "country": "China",
+      "quantity": 6,
+      "in_stock": true,
+      "lead_time_days": 3,
+      "unit_cost_usd": 15400
+    },
+    {
+      "sku": "P-1020-WH-SGT",
+      "part_id": "P-1020",
+      "name": "Wellhead pressure transmitter",
+      "category": "Instrumentation",
+      "unit": "unit",
+      "issue_codes": [
+        "PRESSURE_DECLINE",
+        "OVERPRESSURE"
+      ],
+      "addresses": [
+        "Wellhead pressure decline",
+        "Annulus overpressure"
+      ],
+      "warehouse": "WH-SGT",
+      "warehouse_name": "Surgut Depot",
+      "region": "West Siberia",
+      "country": "Russia",
+      "quantity": 2,
+      "in_stock": true,
+      "lead_time_days": 10,
+      "unit_cost_usd": 2600
+    },
+    {
+      "sku": "P-1020-WH-TSN",
+      "part_id": "P-1020",
+      "name": "Wellhead pressure transmitter",
+      "category": "Instrumentation",
+      "unit": "unit",
+      "issue_codes": [
+        "PRESSURE_DECLINE",
+        "OVERPRESSURE"
+      ],
+      "addresses": [
+        "Wellhead pressure decline",
+        "Annulus overpressure"
+      ],
+      "warehouse": "WH-TSN",
+      "warehouse_name": "Tianjin Marine Base",
+      "region": "Bohai Bay",
+      "country": "China",
+      "quantity": 2,
+      "in_stock": true,
+      "lead_time_days": 5,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1021-WH-ABZ",
+      "part_id": "P-1021",
+      "name": "Downhole pressure/temperature gauge",
+      "category": "Instrumentation",
+      "unit": "unit",
+      "issue_codes": [
+        "PRESSURE_DECLINE"
+      ],
+      "addresses": [
+        "Wellhead pressure decline"
+      ],
+      "warehouse": "WH-ABZ",
+      "warehouse_name": "Aberdeen Supply Base",
+      "region": "North Sea",
+      "country": "United Kingdom",
+      "quantity": 8,
+      "in_stock": true,
+      "lead_time_days": 5,
+      "unit_cost_usd": 5400
+    },
+    {
+      "sku": "P-1021-WH-HOU",
+      "part_id": "P-1021",
+      "name": "Downhole pressure/temperature gauge",
+      "category": "Instrumentation",
+      "unit": "unit",
+      "issue_codes": [
+        "PRESSURE_DECLINE"
+      ],
+      "addresses": [
+        "Wellhead pressure decline"
+      ],
+      "warehouse": "WH-HOU",
+      "warehouse_name": "Houston Distribution Center",
+      "region": "Gulf of Mexico",
+      "country": "United States",
+      "quantity": 8,
+      "in_stock": true,
+      "lead_time_days": 7,
+      "unit_cost_usd": 850
+    },
+    {
+      "sku": "P-1022-WH-ABZ",
+      "part_id": "P-1022",
+      "name": "Fixed H2S gas detector",
+      "category": "Instrumentation",
+      "unit": "unit",
+      "issue_codes": [
+        "H2S_DETECTED"
+      ],
+      "addresses": [
+        "H2S detected"
+      ],
+      "warehouse": "WH-ABZ",
+      "warehouse_name": "Aberdeen Supply Base",
+      "region": "North Sea",
+      "country": "United Kingdom",
+      "quantity": 12,
+      "in_stock": true,
+      "lead_time_days": 3,
+      "unit_cost_usd": 5400
+    },
+    {
+      "sku": "P-1022-WH-TSN",
+      "part_id": "P-1022",
+      "name": "Fixed H2S gas detector",
+      "category": "Instrumentation",
+      "unit": "unit",
+      "issue_codes": [
+        "H2S_DETECTED"
+      ],
+      "addresses": [
+        "H2S detected"
+      ],
+      "warehouse": "WH-TSN",
+      "warehouse_name": "Tianjin Marine Base",
+      "region": "Bohai Bay",
+      "country": "China",
+      "quantity": 3,
+      "in_stock": true,
+      "lead_time_days": 10,
+      "unit_cost_usd": 15400
+    }
+  ]
+}

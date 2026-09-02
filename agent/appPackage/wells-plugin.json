@@ -1,0 +1,292 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+    "schema_version": "v2.4",
+    "name_for_human": "Drilling Hotspots Agent",
+    "description_for_human": "Interactive map and operational KPIs for a worldwide drilling-well fleet.",
+    "namespace": "wells",
+    "functions": [
+        {
+            "name": "get_wells_summary",
+            "description": "Get aggregate operational statistics for the drilling-well fleet: total wells, breakdown by status, type and basin, total production (bbl/day), wells with alerts and critical wells.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {},
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "🛢️ ${total} wells in the fleet",
+                                "weight": "Bolder",
+                                "size": "Medium",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${total_production_bbl_d} bbl/day · ${wells_with_alerts} with alerts · ${critical_wells} critical",
+                                "isSubtle": true,
+                                "wrap": true,
+                                "spacing": "None"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "list_wells",
+            "description": "List individual drilling wells with their operational KPIs, optionally filtered by status, type, basin/country, alerts, or a bounding box.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$.wells",
+                    "properties": {
+                        "title": "$.name",
+                        "subtitle": "$.status"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "${name} · ${id}",
+                                "weight": "Bolder",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${status} ${type} · ${basin}",
+                                "isSubtle": true,
+                                "spacing": "None",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${production_bbl_d} bbl/d · ${wellhead_pressure_psi} psi · ${depth_m} m",
+                                "wrap": true,
+                                "spacing": "None"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "get_well_details",
+            "description": "Get the full operational detail for a single well by its id, including status, type, production, wellhead pressure, depth, water cut, operator, basin and active alerts.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.name",
+                        "subtitle": "$.status_label"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "${name} · ${id}",
+                                "weight": "Bolder",
+                                "size": "Medium",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${status_label} ${type_label} · ${basin}, ${country}",
+                                "isSubtle": true,
+                                "spacing": "None",
+                                "wrap": true
+                            },
+                            {
+                                "type": "FactSet",
+                                "facts": [
+                                    { "title": "Production", "value": "${production_bbl_d} bbl/d" },
+                                    { "title": "Wellhead pressure", "value": "${wellhead_pressure_psi} psi" },
+                                    { "title": "Depth", "value": "${depth_m} m" },
+                                    { "title": "Water cut", "value": "${water_cut_pct} %" },
+                                    { "title": "Operator", "value": "${operator}" }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "show_wells_map",
+            "description": "Display an interactive map of the drilling wells with markers coloured by status and click-to-open KPI popups. Default view is all wells worldwide; zoom to a basin or country via `area`, or filter by status, type or only_alerts to focus on operational hotspots.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {},
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "🛢️ Map of ${total} wells${if(region_label, ' in ' + region_label, ' worldwide')}",
+                                "weight": "Bolder",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${wells_with_alerts} with active alerts · ${total_production_bbl_d} bbl/day",
+                                "isSubtle": true,
+                                "spacing": "None",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "RemoteMCPServer",
+            "auth": {
+                "type": "None"
+            },
+            "spec": {
+                "url": "https://1wsvgmch-8010.uks1.devtunnels.ms/mcp/",
+                "mcp_tool_description": {
+                    "tools": [
+                        {
+                            "name": "get_wells_summary",
+                            "description": "Get aggregate operational statistics for the drilling-well fleet: total wells, breakdown by status (producing/shut-in/drilling/maintenance), by well type (oil/gas/injection/exploration) and by basin, total production (bbl/day), number of wells with active alerts, and the number of critical wells.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {},
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        },
+                        {
+                            "name": "list_wells",
+                            "description": "List individual drilling wells with their operational KPIs (status, type, production bbl/day, wellhead pressure, depth, water cut, alerts), optionally filtered by status, well type, basin or country, whether they currently have alerts, or a geographic bounding box. Use only_alerts=true to surface operational hotspots.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "status": {
+                                        "type": "string",
+                                        "enum": ["producing", "shut-in", "drilling", "maintenance"],
+                                        "description": "Filter to a single well status."
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "enum": ["oil", "gas", "injection", "exploration"],
+                                        "description": "Filter to a single well type."
+                                    },
+                                    "basin": {
+                                        "type": "string",
+                                        "description": "Filter to a basin or country, e.g. 'North Sea', 'Brazil'."
+                                    },
+                                    "only_alerts": {
+                                        "type": "boolean",
+                                        "description": "Keep only wells with active alerts."
+                                    },
+                                    "bbox": {
+                                        "type": "array",
+                                        "items": { "type": "number" },
+                                        "minItems": 4,
+                                        "maxItems": 4,
+                                        "description": "Bounding box [minLon, minLat, maxLon, maxLat]."
+                                    },
+                                    "limit": {
+                                        "type": "integer",
+                                        "minimum": 1,
+                                        "maximum": 200,
+                                        "description": "Max wells to return (default 25)."
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        },
+                        {
+                            "name": "get_well_details",
+                            "description": "Get the full operational detail for a single well by its id (e.g. 'NS-014', 'GOM-021'): status, type, production, wellhead pressure, depth, water cut, operator, basin, spud date, last update, and the list of active alerts with their severity.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "well_id": {
+                                        "type": "string",
+                                        "description": "Well identifier, e.g. 'NS-014'."
+                                    }
+                                },
+                                "required": ["well_id"],
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        },
+                        {
+                            "name": "show_wells_map",
+                            "description": "Display an interactive map of the drilling wells with markers coloured by status and click-to-open popups showing each well's KPIs. The default view shows all wells worldwide; zoom to a basin or country via `area` or an explicit `bbox`, and filter by status, well type, or only_alerts to focus on operational hotspots.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "area": {
+                                        "type": "string",
+                                        "description": "Basin or country to zoom to, e.g. 'North Sea', 'Gulf of Mexico', 'Brazil'."
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "enum": ["producing", "shut-in", "drilling", "maintenance"],
+                                        "description": "Filter to a single well status."
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "enum": ["oil", "gas", "injection", "exploration"],
+                                        "description": "Filter to a single well type."
+                                    },
+                                    "only_alerts": {
+                                        "type": "boolean",
+                                        "description": "Show only wells with active alerts."
+                                    },
+                                    "bbox": {
+                                        "type": "array",
+                                        "items": { "type": "number" },
+                                        "minItems": 4,
+                                        "maxItems": 4,
+                                        "description": "Explicit zoom/filter box [minLon, minLat, maxLon, maxLat]."
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            },
+                            "_meta": {
+                                "ui": {
+                                    "resourceUri": "ui://wells/wells-map.html",
+                                    "visibility": ["model", "app"]
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "run_for_functions": [
+                "get_wells_summary",
+                "list_wells",
+                "get_well_details",
+                "show_wells_map"
+            ]
+        }
+    ]
+}

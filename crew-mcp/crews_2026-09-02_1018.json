@@ -1,0 +1,292 @@
+{
+  "generated_at": "2026-09-02T10:18:30+00:00",
+  "reference_date": "2026-09-02",
+  "count": 16,
+  "note": "Synthetic demo crew availability -- not real crews or schedules.",
+  "specialties": {
+    "WELL_INTEGRITY": "Well integrity",
+    "ARTIFICIAL_LIFT": "Artificial lift (ESP)",
+    "SAND_CONTROL": "Sand control",
+    "FLOW_ASSURANCE": "Flow assurance",
+    "HSE_SOUR": "HSE / sour service",
+    "GENERAL": "General well services"
+  },
+  "crews": [
+    {
+      "crew_id": "CRW-01",
+      "name": "Aberdeen Alpha crew",
+      "specialty": "WELL_INTEGRITY",
+      "specialty_label": "Well integrity",
+      "base": "Aberdeen",
+      "country": "United Kingdom",
+      "regions_covered": [
+        "North Sea"
+      ],
+      "members": 6,
+      "status": "Scheduled inspection",
+      "current_assignment": "Scheduled inspection",
+      "next_available_date": "2026-09-12",
+      "available_in_days": 10,
+      "shift": "day/night"
+    },
+    {
+      "crew_id": "CRW-02",
+      "name": "Aberdeen Bravo crew",
+      "specialty": "ARTIFICIAL_LIFT",
+      "specialty_label": "Artificial lift (ESP)",
+      "base": "Aberdeen",
+      "country": "United Kingdom",
+      "regions_covered": [
+        "North Sea"
+      ],
+      "members": 7,
+      "status": "Workover in progress",
+      "current_assignment": "Workover in progress",
+      "next_available_date": "2026-09-12",
+      "available_in_days": 10,
+      "shift": "day"
+    },
+    {
+      "crew_id": "CRW-03",
+      "name": "Houston Charlie crew",
+      "specialty": "SAND_CONTROL",
+      "specialty_label": "Sand control",
+      "base": "Houston",
+      "country": "United States",
+      "regions_covered": [
+        "Gulf of Mexico",
+        "Permian Basin"
+      ],
+      "members": 7,
+      "status": "Turnaround support",
+      "current_assignment": "Turnaround support",
+      "next_available_date": "2026-09-04",
+      "available_in_days": 2,
+      "shift": "day"
+    },
+    {
+      "crew_id": "CRW-04",
+      "name": "Houston Delta crew",
+      "specialty": "FLOW_ASSURANCE",
+      "specialty_label": "Flow assurance",
+      "base": "Houston",
+      "country": "United States",
+      "regions_covered": [
+        "Gulf of Mexico",
+        "Permian Basin"
+      ],
+      "members": 3,
+      "status": "Workover in progress",
+      "current_assignment": "Workover in progress",
+      "next_available_date": "2026-09-04",
+      "available_in_days": 2,
+      "shift": "day"
+    },
+    {
+      "crew_id": "CRW-05",
+      "name": "Midland Echo crew",
+      "specialty": "HSE_SOUR",
+      "specialty_label": "HSE / sour service",
+      "base": "Midland",
+      "country": "United States",
+      "regions_covered": [
+        "Permian Basin",
+        "Gulf of Mexico"
+      ],
+      "members": 7,
+      "status": "Transit / crew change",
+      "current_assignment": "Transit / crew change",
+      "next_available_date": "2026-09-09",
+      "available_in_days": 7,
+      "shift": "24h rotation"
+    },
+    {
+      "crew_id": "CRW-06",
+      "name": "Midland Foxtrot crew",
+      "specialty": "GENERAL",
+      "specialty_label": "General well services",
+      "base": "Midland",
+      "country": "United States",
+      "regions_covered": [
+        "Permian Basin",
+        "Gulf of Mexico"
+      ],
+      "members": 3,
+      "status": "Scheduled inspection",
+      "current_assignment": "Scheduled inspection",
+      "next_available_date": "2026-09-05",
+      "available_in_days": 3,
+      "shift": "day/night"
+    },
+    {
+      "crew_id": "CRW-07",
+      "name": "Dammam Golf crew",
+      "specialty": "WELL_INTEGRITY",
+      "specialty_label": "Well integrity",
+      "base": "Dammam",
+      "country": "Saudi Arabia",
+      "regions_covered": [
+        "Ghawar / Persian Gulf"
+      ],
+      "members": 7,
+      "status": "Turnaround support",
+      "current_assignment": "Turnaround support",
+      "next_available_date": "2026-09-07",
+      "available_in_days": 5,
+      "shift": "day"
+    },
+    {
+      "crew_id": "CRW-08",
+      "name": "Dammam Hotel crew",
+      "specialty": "ARTIFICIAL_LIFT",
+      "specialty_label": "Artificial lift (ESP)",
+      "base": "Dammam",
+      "country": "Saudi Arabia",
+      "regions_covered": [
+        "Ghawar / Persian Gulf"
+      ],
+      "members": 7,
+      "status": "Available now",
+      "current_assignment": "Available on standby",
+      "next_available_date": "2026-09-02",
+      "available_in_days": 0,
+      "shift": "day"
+    },
+    {
+      "crew_id": "CRW-09",
+      "name": "Maca\u00e9 India crew",
+      "specialty": "SAND_CONTROL",
+      "specialty_label": "Sand control",
+      "base": "Maca\u00e9",
+      "country": "Brazil",
+      "regions_covered": [
+        "Campos Basin"
+      ],
+      "members": 4,
+      "status": "Turnaround support",
+      "current_assignment": "Turnaround support",
+      "next_available_date": "2026-09-12",
+      "available_in_days": 10,
+      "shift": "day"
+    },
+    {
+      "crew_id": "CRW-10",
+      "name": "Maca\u00e9 Juliet crew",
+      "specialty": "FLOW_ASSURANCE",
+      "specialty_label": "Flow assurance",
+      "base": "Maca\u00e9",
+      "country": "Brazil",
+      "regions_covered": [
+        "Campos Basin"
+      ],
+      "members": 6,
+      "status": "Turnaround support",
+      "current_assignment": "Turnaround support",
+      "next_available_date": "2026-09-03",
+      "available_in_days": 1,
+      "shift": "day"
+    },
+    {
+      "crew_id": "CRW-11",
+      "name": "Port Harcourt Kilo crew",
+      "specialty": "HSE_SOUR",
+      "specialty_label": "HSE / sour service",
+      "base": "Port Harcourt",
+      "country": "Nigeria",
+      "regions_covered": [
+        "Niger Delta"
+      ],
+      "members": 7,
+      "status": "Rig-up mobilisation",
+      "current_assignment": "Rig-up mobilisation",
+      "next_available_date": "2026-09-03",
+      "available_in_days": 1,
+      "shift": "day/night"
+    },
+    {
+      "crew_id": "CRW-12",
+      "name": "Port Harcourt Lima crew",
+      "specialty": "GENERAL",
+      "specialty_label": "General well services",
+      "base": "Port Harcourt",
+      "country": "Nigeria",
+      "regions_covered": [
+        "Niger Delta"
+      ],
+      "members": 3,
+      "status": "Scheduled inspection",
+      "current_assignment": "Scheduled inspection",
+      "next_available_date": "2026-09-07",
+      "available_in_days": 5,
+      "shift": "24h rotation"
+    },
+    {
+      "crew_id": "CRW-13",
+      "name": "Surgut Mike crew",
+      "specialty": "WELL_INTEGRITY",
+      "specialty_label": "Well integrity",
+      "base": "Surgut",
+      "country": "Russia",
+      "regions_covered": [
+        "West Siberia"
+      ],
+      "members": 5,
+      "status": "Turnaround support",
+      "current_assignment": "Turnaround support",
+      "next_available_date": "2026-09-04",
+      "available_in_days": 2,
+      "shift": "day"
+    },
+    {
+      "crew_id": "CRW-14",
+      "name": "Surgut November crew",
+      "specialty": "ARTIFICIAL_LIFT",
+      "specialty_label": "Artificial lift (ESP)",
+      "base": "Surgut",
+      "country": "Russia",
+      "regions_covered": [
+        "West Siberia"
+      ],
+      "members": 5,
+      "status": "Workover in progress",
+      "current_assignment": "Workover in progress",
+      "next_available_date": "2026-09-03",
+      "available_in_days": 1,
+      "shift": "24h rotation"
+    },
+    {
+      "crew_id": "CRW-15",
+      "name": "Tianjin Oscar crew",
+      "specialty": "SAND_CONTROL",
+      "specialty_label": "Sand control",
+      "base": "Tianjin",
+      "country": "China",
+      "regions_covered": [
+        "Bohai Bay"
+      ],
+      "members": 5,
+      "status": "Available now",
+      "current_assignment": "Available on standby",
+      "next_available_date": "2026-09-02",
+      "available_in_days": 0,
+      "shift": "24h rotation"
+    },
+    {
+      "crew_id": "CRW-16",
+      "name": "Tianjin Papa crew",
+      "specialty": "FLOW_ASSURANCE",
+      "specialty_label": "Flow assurance",
+      "base": "Tianjin",
+      "country": "China",
+      "regions_covered": [
+        "Bohai Bay"
+      ],
+      "members": 3,
+      "status": "Rig-up mobilisation",
+      "current_assignment": "Rig-up mobilisation",
+      "next_available_date": "2026-09-04",
+      "available_in_days": 2,
+      "shift": "day/night"
+    }
+  ]
+}

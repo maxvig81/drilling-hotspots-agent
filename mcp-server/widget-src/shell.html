@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Drilling Wells</title>
+<style>
+  :root {
+    --bg: var(--color-background-primary, #0b1622);
+    --text: var(--color-text-primary, #e8eef4);
+    --muted: var(--color-text-secondary, #9fb0c0);
+    --sea: #0d1b2a;
+    --land: #1b2a3a;
+    --land-stroke: #35506b;
+    --border: #6f8aa3;
+    --accent: #ff7a1a;
+    --producing: #35c46b;
+    --shutin: #93a6b8;
+    --drilling: #3fa9ff;
+    --maintenance: #ffb020;
+    --critical: #ff4d2e;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans, "Segoe UI", system-ui, sans-serif);
+    color: var(--text);
+    background: var(--bg);
+    overflow: hidden;
+  }
+  #wrap { display: flex; flex-direction: column; height: 540px; min-height: 380px; }
+  header {
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    padding: 10px 14px 6px;
+  }
+  header h1 { font-size: 15px; margin: 0; font-weight: 600; letter-spacing: .2px; }
+  header .sub { font-size: 12px; color: var(--muted); }
+  #mapbox { position: relative; flex: 1 1 auto; min-height: 220px; }
+  svg { width: 100%; height: 100%; display: block; cursor: grab; touch-action: none;
+        background: radial-gradient(120% 90% at 50% 15%, #12283f 0%, var(--sea) 70%); }
+  svg.grabbing { cursor: grabbing; }
+  .land { fill: var(--land); stroke: var(--land-stroke); stroke-width: .35;
+          stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+  .border { fill: none; stroke: var(--border); stroke-width: .4;
+            vector-effect: non-scaling-stroke; opacity: .5; }
+  .well { stroke: rgba(4,12,20,.85); stroke-width: .35; vector-effect: non-scaling-stroke;
+          cursor: pointer; }
+  .well:hover { stroke: #fff; stroke-width: .8; }
+  .well.sel { stroke: #fff; stroke-width: 1.1; }
+  .alertring { fill: none; stroke: var(--critical); stroke-width: .5;
+               vector-effect: non-scaling-stroke; opacity: .9; pointer-events: none; }
+  #controls { position: absolute; top: 8px; right: 8px; display: flex; gap: 6px; }
+  #controls button {
+    width: 26px; height: 26px; border-radius: 6px; cursor: pointer;
+    border: 1px solid var(--land-stroke); background: rgba(20,34,50,.82);
+    color: #e8eef4; font-size: 15px; line-height: 1; padding: 0;
+  }
+  #controls button:hover { background: rgba(40,60,84,.9); }
+  #hint { position: absolute; left: 10px; bottom: 8px; font-size: 11px;
+          color: #b7c6d5; opacity: .8; pointer-events: none; }
+  #empty { position: absolute; inset: 0; display: none; align-items: center;
+           justify-content: center; color: #b7c6d5; font-size: 13px; }
+  /* Popup panel */
+  #popup { position: absolute; top: 8px; left: 8px; width: 262px; max-width: 70%;
+           display: none; background: rgba(12,22,34,.96); color: #eaf1f8;
+           /* The popup always sits on a dark panel, so pin light text colours
+              locally instead of inheriting the host theme (which can be dark
+              text for a light Copilot theme -> unreadable). */
+           --text: #eaf1f8; --muted: #a7bccf; --land-stroke: #3a5470;
+           border: 1px solid var(--land-stroke); border-radius: 10px;
+           padding: 11px 13px 12px; font-size: 12px; backdrop-filter: blur(3px);
+           box-shadow: 0 6px 22px rgba(0,0,0,.55); }
+  #popup.on { display: block; }
+  #popup .phead { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  #popup .pdot { width: 11px; height: 11px; border-radius: 50%;
+                 box-shadow: 0 0 6px currentColor; flex: 0 0 auto; }
+  #popup .ptitle { font-weight: 700; font-size: 13px; }
+  #popup .pid { color: var(--muted); font-weight: 400; }
+  #popup .pclose { margin-left: auto; cursor: pointer; color: var(--muted);
+                   border: none; background: none; font-size: 15px; line-height: 1; }
+  #popup .psub { color: var(--muted); margin-bottom: 8px; }
+  #popup .kv { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; }
+  #popup .kv .k { color: var(--muted); }
+  #popup .kv .v { text-align: right; font-variant-numeric: tabular-nums; }
+  #popup .alerts { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px; }
+  #popup .chip { font-size: 11px; padding: 1px 7px; border-radius: 10px;
+                 background: rgba(255,77,46,.16); color: #ffb3a4;
+                 border: 1px solid rgba(255,77,46,.5); }
+  #controls button.active { background: var(--accent); color: #10233b;
+                            border-color: var(--accent); }
+  /* Top-KPI tiles in the well popup */
+  #popup .kpis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px;
+                 margin: 8px 0 4px; }
+  #popup .kpi { background: rgba(255,255,255,.05); border: 1px solid var(--land-stroke);
+                border-radius: 8px; padding: 5px 8px; }
+  #popup .kpi .val { font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums;
+                     line-height: 1.1; }
+  #popup .kpi .val small { font-size: 10px; font-weight: 600; color: var(--muted); }
+  #popup .kpi .lbl { font-size: 9.5px; color: var(--muted); text-transform: uppercase;
+                     letter-spacing: .3px; margin-top: 1px; }
+  /* Optional layer markers */
+  .warehouse { fill: var(--maintenance); stroke: rgba(4,12,20,.85); stroke-width: .35;
+               vector-effect: non-scaling-stroke; cursor: pointer; }
+  .warehouse:hover { stroke: #fff; stroke-width: .9; }
+  .crew { fill: #33c9c9; stroke: rgba(4,12,20,.85); stroke-width: .35;
+          vector-effect: non-scaling-stroke; cursor: pointer; }
+  .crew:hover { stroke: #fff; stroke-width: .9; }
+  #popup .kv .v.ok { color: var(--producing); }
+  #popup .kv .v.bad { color: var(--critical); }
+  footer {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    padding: 6px 14px 10px; font-size: 12px; color: var(--muted);
+  }
+  .legend { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .legend .item { display: flex; align-items: center; gap: 6px; cursor: pointer;
+                  user-select: none; opacity: .95; }
+  .legend .item.off { opacity: .38; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block;
+         box-shadow: 0 0 6px currentColor; }
+  .count { color: var(--accent); font-weight: 700; }
+  .attr { margin-left: auto; opacity: .75; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <header>
+    <h1>🛢️ Drilling Wells</h1>
+    <span class="sub" id="subtitle">Loading…</span>
+  </header>
+  <div id="mapbox">
+    <svg id="map" preserveAspectRatio="xMidYMid meet" role="img"
+         aria-label="Map of drilling wells"></svg>
+    <div id="controls">
+      <button id="togglewh" title="Toggle parts-stock warehouses" aria-label="Toggle warehouses layer">🏭</button>
+      <button id="togglecrew" title="Toggle maintenance-crew bases" aria-label="Toggle crews layer">👷</button>
+      <button id="zoomin" title="Zoom in" aria-label="Zoom in">+</button>
+      <button id="zoomout" title="Zoom out" aria-label="Zoom out">−</button>
+      <button id="reset" title="Reset view" aria-label="Reset view">⟲</button>
+    </div>
+    <div id="popup" aria-live="polite"></div>
+    <div id="hint">Scroll to zoom · drag to pan · click a well</div>
+    <div id="empty">No wells match the current selection.</div>
+  </div>
+  <footer>
+    <div class="legend" id="legend"></div>
+    <span class="attr">Synthetic demo data · base map © Natural Earth</span>
+  </footer>
+</div>
+<!--BUNDLE-->
+</body>
+</html>

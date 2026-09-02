@@ -1,0 +1,55 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.8/schema.json",
+    "version": "v1.8",
+    "name": "Drilling Hotspots Agent${{APP_NAME_SUFFIX}}",
+    "description": "Operational piloting for an oil & gas drilling-well fleet across worldwide basins. Visualize wells on an interactive map, review KPIs (production, wellhead pressure, depth, water cut), and surface operational hotspots — wells with active alerts that need attention.",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "World map",
+            "text": "Show me the map of all our drilling wells worldwide"
+        },
+        {
+            "title": "Fleet summary",
+            "text": "Give me a summary of the well fleet: how many are producing, shut-in, drilling or in maintenance, and total production?"
+        },
+        {
+            "title": "Operational hotspots",
+            "text": "Which wells currently have active alerts and need attention? Show them on the map."
+        },
+        {
+            "title": "Zoom to a basin",
+            "text": "Show the drilling wells in the North Sea on the map"
+        },
+        {
+            "title": "List by status",
+            "text": "List all wells that are currently in maintenance with their KPIs"
+        },
+        {
+            "title": "Well details",
+            "text": "Give me the full operational details for well NS-014"
+        },
+        {
+            "title": "Organize a maintenance",
+            "text": "Well GOM-011 in the Gulf of Mexico has an annulus overpressure. Organize a maintenance: check if we have the parts in stock and when a crew can intervene at the earliest."
+        },
+        {
+            "title": "Order a missing part",
+            "text": "The casing head pack-off is out of stock for GOM-011 — raise a purchase order for 2 units and email it to the supplier."
+        }
+    ],
+    "actions": [
+        {
+            "id": "wellsPlugin",
+            "file": "wells-plugin.json"
+        },
+        {
+            "id": "partsPlugin",
+            "file": "parts-plugin.json"
+        },
+        {
+            "id": "crewsPlugin",
+            "file": "crews-plugin.json"
+        }
+    ]
+}

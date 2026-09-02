@@ -1,0 +1,201 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+    "schema_version": "v2.4",
+    "name_for_human": "Maintenance Crews",
+    "description_for_human": "Maintenance-crew specialties, region coverage and earliest availability to intervene on wells.",
+    "namespace": "crews",
+    "functions": [
+        {
+            "name": "get_crews_summary",
+            "description": "Get an overview of the maintenance crews: total crews, how many are available now, and breakdown by specialty and region coverage.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {},
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "\ud83d\udc77 ${total_crews} maintenance crews",
+                                "weight": "Bolder",
+                                "size": "Medium",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${available_now} available now",
+                                "isSubtle": true,
+                                "spacing": "None",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "list_crews",
+            "description": "List maintenance crews, optionally filtered by specialty, the region/basin they cover, or those available within a number of days.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$.crews",
+                    "properties": {
+                        "title": "$.name",
+                        "subtitle": "$.specialty_label"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "${name} · ${crew_id}",
+                                "weight": "Bolder",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${specialty_label} · base ${base} · next available ${next_available_date}",
+                                "isSubtle": true,
+                                "spacing": "None",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "find_available_crew",
+            "description": "Find the crew that can intervene at the earliest for a given well problem and location. Provide the problem via `issue` (the specialty is inferred) and/or a `specialty`, plus the `region`/basin. Returns the earliest-available crew, its next available date, and alternative candidates.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {},
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "text": "\ud83d\uddd3\ufe0f Earliest crew: ${earliest_crew.name}",
+                                "weight": "Bolder",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${earliest_crew.specialty_label} · available ${earliest_available_date} (in ${earliest_in_days} d)",
+                                "isSubtle": true,
+                                "spacing": "None",
+                                "wrap": true
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "RemoteMCPServer",
+            "auth": {
+                "type": "None"
+            },
+            "spec": {
+                "url": "https://m11q5trv-8012.uks1.devtunnels.ms/mcp/",
+                "mcp_tool_description": {
+                    "tools": [
+                        {
+                            "name": "get_crews_summary",
+                            "description": "Get an overview of the maintenance crews: total crews, how many are available now, breakdown by specialty (well integrity, artificial lift, sand control, flow assurance, HSE/sour, general) and by region coverage.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {},
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        },
+                        {
+                            "name": "list_crews",
+                            "description": "List maintenance crews, optionally filtered by specialty, the region or basin they cover, or those available within a number of days. Each crew shows its specialty, base, regions covered, size, current status and next available date.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "specialty": {
+                                        "type": "string",
+                                        "enum": ["WELL_INTEGRITY", "ARTIFICIAL_LIFT", "SAND_CONTROL", "FLOW_ASSURANCE", "HSE_SOUR", "GENERAL"],
+                                        "description": "Filter to a crew specialty."
+                                    },
+                                    "region": {
+                                        "type": "string",
+                                        "description": "Filter to crews covering a basin/region, e.g. 'North Sea'."
+                                    },
+                                    "available_within_days": {
+                                        "type": "integer",
+                                        "minimum": 0,
+                                        "maximum": 60,
+                                        "description": "Only crews available within N days."
+                                    },
+                                    "limit": {
+                                        "type": "integer",
+                                        "minimum": 1,
+                                        "maximum": 100,
+                                        "description": "Max crews to return (default 25)."
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        },
+                        {
+                            "name": "find_available_crew",
+                            "description": "Find the maintenance crew that can intervene at the earliest for a given well problem and location. Provide the problem in plain language via `issue` (e.g. 'annulus overpressure', 'ESP failure', 'surpression de l'anneau') — the right specialty is inferred — and/or a `specialty` directly, plus the `region`/basin of the well. Returns the earliest-available crew, its next available date, and up to a few alternative candidates, sorted by earliest availability.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "issue": {
+                                        "type": "string",
+                                        "description": "The well problem to fix, e.g. 'annulus overpressure'."
+                                    },
+                                    "specialty": {
+                                        "type": "string",
+                                        "enum": ["WELL_INTEGRITY", "ARTIFICIAL_LIFT", "SAND_CONTROL", "FLOW_ASSURANCE", "HSE_SOUR", "GENERAL"],
+                                        "description": "Required specialty (if known instead of an issue)."
+                                    },
+                                    "region": {
+                                        "type": "string",
+                                        "description": "Basin/region of the well, e.g. 'North Sea'."
+                                    },
+                                    "top": {
+                                        "type": "integer",
+                                        "minimum": 1,
+                                        "maximum": 10,
+                                        "description": "How many candidate crews to return (default 3)."
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        }
+                    ]
+                }
+            },
+            "run_for_functions": [
+                "get_crews_summary",
+                "list_crews",
+                "find_available_crew"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+# Build outputs
+__pycache__/
+*.pyc
+
+# Node / widget build
+mcp-server/widget-src/node_modules/
+
+# Widget preview artifacts
+mcp-server/widget-src/preview.html
+mcp-server/widget-src/preview*.png
+
+# ATK build output
+agent/appPackage/build/
+
+# Simulated purchase-order outbox
+inventory-mcp/outbox/
+inventory-mcp/po_history.json
+
+# Environment secrets (keep the committed .env.local / .env.dev placeholders,
+# ignore the user-specific ones ATK generates)
+agent/env/.env.*.user
+.wiqd-enforcer.log
